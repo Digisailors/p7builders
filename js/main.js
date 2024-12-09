@@ -1055,6 +1055,7 @@ $(function () {
 //scroll bottom
 function scrollToBottom() {
     window.scrollTo(0, document.body.scrollHeight);
+    // alert("you clicked from bottom");
   }
 //scroll top
   function scrollToTop() {

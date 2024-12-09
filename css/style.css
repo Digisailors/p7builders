@@ -4240,3 +4240,36 @@ html.is-animating .mil-menu-frame {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
+/* index video file */
+/* .video-wrapper{
+  position: relative;
+  width: 90%; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  aspect-ratio: 16 / 9; 
+} */
+.index-video-container{
+  position: relative;
+  width: 90%; /* Adjust width for smaller screens */
+  max-width: 1440px; /* Limit the maximum width */
+  margin: auto; /* Center horizontally */
+  margin-bottom: 40px;
+  aspect-ratio: 16 / 9;
+}
+.index-video-container iframe {
+  position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure the video covers the container */
+        border: none;
+        border: 2px solid rgb(255, 153, 0);
+        border-radius: 20px;
+}
+
+@media (min-width:1044px){
+  .index-video-container{
+    width: 70%;
+  }
+}
