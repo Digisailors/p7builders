@@ -2524,6 +2524,7 @@ team
   position: relative;
   overflow: hidden;
   padding-bottom: 130%;
+  border-radius: 20px; /*mychange */
 }
 .mil-team-card:after {
   content: "";
@@ -2735,26 +2736,28 @@ revievs
     height: 70px;
   }
 }
+
+/* customer voices image */
 .mil-revi-pagination .swiper-pagination-bullet .mil-custom-dot.mil-slide-1 {
-  background-image: url(../img/faces/customers/1.jpg);
+  background-image: url(../img/faces/customers/customerr.jpg);
 }
 .mil-revi-pagination .swiper-pagination-bullet .mil-custom-dot.mil-slide-2 {
-  background-image: url(../img/faces/customers/2.jpg);
+  background-image: url(../img/faces/customers/customerr.jpg);
 }
 .mil-revi-pagination .swiper-pagination-bullet .mil-custom-dot.mil-slide-3 {
-  background-image: url(../img/faces/customers/3.jpg);
+  background-image: url(../img/faces/customers/customer.jpg);
 }
 .mil-revi-pagination .swiper-pagination-bullet .mil-custom-dot.mil-slide-4 {
-  background-image: url(../img/faces/customers/4.jpg);
+  background-image: url(../img/faces/customers/customerr.jpg);
 }
 .mil-revi-pagination .swiper-pagination-bullet .mil-custom-dot.mil-slide-5 {
-  background-image: url(../img/faces/customers/5.jpg);
+  background-image: url(../img/faces/customers/customerr.jpg);
 }
 .mil-revi-pagination .swiper-pagination-bullet .mil-custom-dot.mil-slide-6 {
-  background-image: url(../img/faces/customers/6.jpg);
+  background-image: url(../img/faces/customers/customerr.jpg);
 }
 .mil-revi-pagination .swiper-pagination-bullet .mil-custom-dot.mil-slide-7 {
-  background-image: url(../img/faces/customers/7.jpg);
+  background-image: url(../img/faces/customers/customerr.jpg);
 }
 .mil-revi-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   -webkit-box-shadow: inset 0 0 0 4px rgb(255, 152, 0);
@@ -2841,6 +2844,7 @@ blog
   overflow: hidden;
   padding-bottom: 65%;
   margin-bottom: 30px;
+  border-radius: 20px;
 }
 .mil-blog-card .mil-cover-frame img {
   width: 100%;
@@ -4264,7 +4268,7 @@ html.is-animating .mil-menu-frame {
         height: 100%;
         object-fit: cover; /* Ensure the video covers the container */
         border: none;
-        border: 2px solid rgb(255, 153, 0);
+        /* border: 2px solid rgb(255, 153, 0); */
         border-radius: 20px;
 }
 
