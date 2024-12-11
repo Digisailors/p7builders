@@ -1086,6 +1086,11 @@ function scrollToBottom() {
     window.open("mailto:p7builder@gmail.com?subject=Enquiry&body=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20services.");
   }
 
+//   footer DS link
+  function companyWebsite(){
+    window.open("https://www.digisailor.com/","_blank");
+  }
+
 //   function redirectAfterSubmit() {
 //     // Redirect to the desired URL
 //     window.location.href = "https://suman-seelan.github.io/P7-UI/contact.html";
