@@ -4277,3 +4277,12 @@ html.is-animating .mil-menu-frame {
     width: 70%;
   }
 }
+
+/* company website & pointer  */
+.cmpnyWebsite{
+  color: green;
+  cursor: pointer;
+}
+.cmpnyMail{
+  cursor: pointer;
+}
