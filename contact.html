@@ -251,7 +251,7 @@
                 <section id="contact">
                     <div class="container mil-p-120-90">
                         <h3 class="mil-center mil-up mil-mb-120">Let's <span class="mil-thin">Talk</span></h3>
-                        <form class="row align-items-center" target="_blank" action="https://formsubmit.co/p7builder@gmail.com" method="POST">
+                        <form class="row align-items-center" id="contactForm" action="https://formsubmit.co/sumandiwakarss@gmail.com" method="POST">
                             <div class="col-lg-6 mil-up">
                                 <input type="text" name="name" placeholder="What's your name" required>
                             </div>
@@ -260,10 +260,11 @@
                             </div>
                             <div class="col-lg-12 mil-up">
                                 <textarea name="message" placeholder="Tell us about our project" required></textarea>
+                                <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_subject" value="New Contact Form Submission">
                                 <input type="hidden" name="_template" value="table">
-                                <input type="hidden" name="_autoresponse" value="your form has been received by P7-Builders!!! we review your needs and will contact you !!!ASAP!!!">
-                                <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">
+                                <!-- <input type="hidden" name="_autoresponse" value="your form has been received by P7-Builders!!! we review your needs and will contact you !!!ASAP!!!"> -->
+                                <!-- <input type="hidden" name="_next" value="http://127.0.0.1:5500/contact.html"> -->
 
                             </div>
                             <div class="col-lg-8">
@@ -277,6 +278,36 @@
                                 </div>
                             </div>
                         </form>
+                        <p id="successMessage" style="display: none; color: rgb(255, 255, 255); font-size: 20px; font-weight: bold; background-color: #28a745; padding: 15px; border-radius: 5px; text-align: center; width: 100%; max-width: 500px; margin: 20px auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                          Your form has been submitted successfully!
+                      </p>
+                      
+                        
+                        
+                        <!-- form submission success/failure -->
+                        <script>
+                          document.getElementById('contactForm').addEventListener('submit', function(event) {
+                              event.preventDefault();
+                              const form = event.target;
+                      
+                              fetch(form.action, {
+                                  method: form.method,
+                                  body: new FormData(form)
+                              })
+                              .then(response => {
+                                  if (response.ok) {
+                                      document.getElementById('successMessage').style.display = 'block';
+                                      setTimeout(() => {
+                                          window.location.href = "http://127.0.0.1:5500/contact.html";
+                                      }, 3000); // Redirect after 3 seconds
+                                  } else {
+                                      alert('There was an error submitting the form. Please try again.');
+                                  }
+                              })
+                              .catch(error => console.error('Error:', error));
+                          });
+                      </script>
+  
                     </div>
                 </section>
                 <!-- contact form end -->
