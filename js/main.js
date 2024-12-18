@@ -100,7 +100,11 @@ $(function () {
         opacity: 0,
         ease: 'sine',
     }, "+=.2");
+<<<<<<< HEAD
     timeline.fromTo(".", 0.8, {
+=======
+    timeline.fromTo(".mil-up", 0.8, { 
+>>>>>>> 9a3fa31 (18Dec)
         opacity: 0,
         y: 40,
         scale: .98,
