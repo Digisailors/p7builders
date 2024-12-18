@@ -1,14 +1,3 @@
-/* -------------------------------------------
-
-Name: 		Ruizarch
-Version:    1.0
-Developer:	Nazar Miller (millerDigitalDesign)
-Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=MillerDigitalDesign
-
-p.s. I am available for Freelance hire (UI design, web development). email: miller.themes@gmail.com
-
-------------------------------------------- */
-
 $(function () {
 
     "use strict";
@@ -100,11 +89,7 @@ $(function () {
         opacity: 0,
         ease: 'sine',
     }, "+=.2");
-<<<<<<< HEAD
-    timeline.fromTo(".", 0.8, {
-=======
     timeline.fromTo(".mil-up", 0.8, { 
->>>>>>> 9a3fa31 (18Dec)
         opacity: 0,
         y: 40,
         scale: .98,
@@ -1107,3 +1092,4 @@ function scrollToBottom() {
 //     document.getElementById("myForm").reset();
 //     return false; // Prevent further processing
 // }
+
