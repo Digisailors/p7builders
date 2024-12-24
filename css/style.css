@@ -4342,10 +4342,12 @@ html.is-animating .mil-menu-frame {
 
 /* calculator */
 .calc-container {
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
   background-color: black;
+  flex-wrap: wrap; /* Ensures items wrap on smaller screens */
 }
 
 .calculator, .summary {
@@ -4355,6 +4357,28 @@ html.is-animating .mil-menu-frame {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin: 10px;
   width: 600px;
+  max-width: 100%; 
+  box-sizing: border-box; 
+}
+
+.summary p {
+  margin: 10px 0; 
+  line-height: 2.0;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+  .calc-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the stacked elements */
+    padding: 10px;
+  }
+
+  .calculator, .summary {
+    width: 100%; /* Take full width of the screen */
+    max-width: 500px; /* Cap the maximum width */
+    margin: 10px 0; /* Add spacing between the stacked elements */
+  }
 }
 
 .calc-h2 {
@@ -4398,39 +4422,96 @@ html.is-animating .mil-menu-frame {
   height: 80px;
 }
 
-.calc-button {
-  display: block;
-  width: 80%;
-  padding: 10px;
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.calculator-button {
+  background: linear-gradient(135deg, #ff7300, #fae100);
   margin: auto;
-  background: green;
-  color: white;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
-  font-size: 1em;
-  
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.calc-button:hover {
-  background: darkgreen;
+.calculator-button:hover {
+  animation: pulse 1s infinite;
+  background: linear-gradient(135deg, #9d61ff, #6c63ff);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  }
+}
+.calculator-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* summary image */
+.summary-image {
+  display: block; /* Ensure the image is visible on large screens */
+  width: 100%; /* Adjust width as needed */
+  max-width: 400px; /* Limit the width for better design */
+  margin: 20px auto; /* Center the image and add spacing */
+}
 
-.sec-spacing{
+/* Hide the image on small screens */
+@media (max-width: 768px) {
+  .summary-image {
+    display: none;
+  }
+}
+
+/* .sec-spacing{
   height: 600px;
   overflow: scroll;
+} */
+
+.sec-spacing{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  /* padding: 20px;  */
+  box-sizing: border-box; 
+  overflow: auto;
 }
+
+.sec-span{
+  color: #f9c940;
+  font-size: 2.5rem;
+}
+
 h1.design {
-  margin: auto;
   color: #333;
+  font-size: 2.5rem; /* Customize heading size */
+  margin-top: 30px;
+  margin-bottom: 10px; 
 
 }
 
 p.subtitle {
   color: #666;
-  font-size: 16px;
-  margin-bottom: 80px;
+  font-size: 1.2rem; /* Customize subtitle size */
+  margin-top: 0; /* Remove any default top margin */
+  margin-bottom: 100px;
+  
 }
 
 .timeline-container {
@@ -4488,6 +4569,11 @@ p.subtitle {
   color: #555;
   margin-top: 10px;
   margin: auto;
+}
+
+.step-content.active {
+  font-weight: bold;
+  color: #020202;
 }
 
 .step-content span {
@@ -4551,4 +4637,7 @@ p.subtitle {
   p.subtitle {
     font-size: 14px;
   }
+}
+.extra-space{
+  height: 90px;
 }

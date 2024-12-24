@@ -20,9 +20,7 @@
   </head>
 
   <body>
-    <!-- wrapper -->
     <div class="mil-wrapper" id="top">
-      <!-- cursor -->
       <div class="mil-ball">
         <span class="mil-icon-1">
           <svg viewBox="0 0 128 128">
@@ -34,10 +32,9 @@
         <div class="mil-more-text">More</div>
         <div class="mil-choose-text">Сhoose</div>
       </div>
-      <!-- cursor end -->
 
       <!-- preloader -->
-     <!-- <div class="mil-preloader">
+      <!-- <div class="mil-preloader">
             <div class="mil-preloader-animation">
                 <div class="mil-pos-abs mil-animation-1">
                     <p class="mil-h3 mil-muted mil-thin">Extravagant By Design</p>
@@ -54,12 +51,9 @@
         </div> -->
       <!-- preloader end -->
 
-      <!-- scrollbar progress -->
       <div class="mil-progress-track">
         <div class="mil-progress"></div>
       </div>
-      <!-- scrollbar progress end -->
-
       <!-- menu -->
       <div class="mil-menu-frame">
         <!-- frame clone -->
@@ -76,7 +70,7 @@
               <div class="col-xl-5">
                 <nav class="mil-main-menu" id="swupMenu">
                   <ul>
-                    <li class="mil-has-children ">
+                    <li class="mil-has-children">
                       <a href="index.html#.">Homepage</a>
                       <!-- <ul>
                                             <li><a href="index.html">Landing page</a></li>
@@ -92,14 +86,16 @@
                                             <li><a href="portfolio-3.html">Slider</a></li>
                                         </ul> -->
                     </li>
-                    <li class="mil-has-children mil-active">
+                    <li class="mil-has-children">
                       <a href="service.html">Service</a>
-                      <ul>                
-                                            <li><a href="service.html">Construction</a></li>
-                                            <li><a href="service-1.html">Project Management</a></li>
-                                            <li><a href="service-2.html">Interior Projects</a></li>
-                                            <li><a href="service-3.html">Architectural Designs</a></li>
-                                        </ul>
+                      <ul>
+                        <li><a href="service.html">Construction</a></li>
+                        <li><a href="service-1.html">Project Management</a></li>
+                        <li><a href="service-2.html">Interior Projects</a></li>
+                        <li>
+                          <a href="service-3.html">Architectural Designs</a>
+                        </li>
+                      </ul>
                     </li>
                     <li class="mil-has-children">
                       <a href="blog-inner.html">Projects</a>
@@ -108,6 +104,11 @@
                                             <li><a href="publication.html">Publication</a></li>
                                         </ul> -->
                     </li>
+
+                    <li class="mil-has-children mil-active">
+                      <a href="calculator.html">Cost Calculator</a>
+                    </li>
+
                     <li class="mil-has-children">
                       <a href="team.html#.">About Us</a>
                       <!-- <ul>
@@ -229,13 +230,11 @@
           </div>
         </div>
       </div>
-      <!-- menu -->
 
       <!-- curtain -->
       <div class="mil-curtain"></div>
       <!-- curtain end -->
 
-      <!-- frame -->
       <div class="mil-frame">
         <div class="mil-frame-top">
           <a href="home-1.html" class="mil-logo">P7.</a>
@@ -247,7 +246,7 @@
           <div class="mil-current-page"></div>
           <div class="mil-back-to-top">
             <a
-              href="service.html#top"
+              href="calculator.html#top"
               class="mil-link mil-dark mil-arrow-place"
             >
               <span>Back to top</span>
@@ -255,10 +254,8 @@
           </div>
         </div>
       </div>
-      <!-- frame end -->
 
-      <!-- content -->
-      <div class="mil-content">
+      <main class="mil-content">
         <div id="swupMain" class="mil-main-transition">
           <!-- banner -->
           <div class="mil-inner-banner">
@@ -273,275 +270,207 @@
               <div class="container">
                 <ul class="mil-breadcrumbs mil-mb-60">
                   <li><a href="home-1.html">Homepage</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="service.html">Service</a></li>
+                  <li><a href="services.html">Package & Cost Calculator</a></li>
                 </ul>
-                <h1 class="mil-mb-60">Construction</h1>
+                <h1 class="mil-mb-60">Calculator</h1>
                 <a
-                  href="service.html"
+                  href="#calc-section"
                   class="mil-link mil-dark mil-arrow-place mil-down-arrow"
                 >
                   <span>About service</span>
+                  <div class="extra-space"></div>
                 </a>
               </div>
+                <div class="calc-container">
+                  <div class="calculator">
+                    <h2 class="calc-h2">House Construction Cost Calculator</h2>
+                    <div class="calc-form-group">
+                      <label for="constructionArea"
+                        >Construction area in sq.ft</label
+                      >
+                      <input
+                        type="number"
+                        id="constructionArea"
+                        min="0"
+                        max="10000"
+                        value="0"
+                      />
+                    </div>
+                    <div class="calc-form-group">
+                      <label for="constructionPackage"
+                        >Select construction Package</label
+                      >
+                      <select id="constructionPackage">
+                        <option value="0">Select value</option>
+                        <option value="2099">Basic - Rs. 2099/sq.ft</option>
+                        <option value="2199">Standard - Rs. 2199/sq.ft</option>
+                        <option value="2299">Premium - Rs. 2299/sq.ft</option>
+                        <option value="2899">
+                          Ultra-Premium - Rs. 2899/sq.ft
+                        </option>
+                      </select>
+                    </div>
+                    <div class="calc-form-group">
+                      <label for="carParkingArea"
+                        >Car Parking area in square feet (optional)</label
+                      >
+                      <input
+                        type="number"
+                        id="carParkingArea"
+                        min="0"
+                        max="10000"
+                        value="0"
+                      />
+                    </div>
+                    <div class="calc-form-group">
+                      <label for="undergroundSumpRange"
+                        >How many litres of underground sump required?
+                        (optional)</label
+                      >
+                      <input
+                        type="range"
+                        id="undergroundSumpRange"
+                        min="0"
+                        max="20000"
+                        step="1000"
+                        value="0"
+                      />
+                      <span class="calc-span" id="undergroundSumpSpan">0</span>
+                      litres
+                    </div>
+                    <div class="calc-form-group">
+                      <label for="wasteWaterTankRange"
+                        >How many person waste water recycling tank required?
+                        (optional)</label
+                      >
+                      <input
+                        type="range"
+                        id="wasteWaterTankRange"
+                        min="0"
+                        max="10"
+                        value="0"
+                      />
+                      <span class="calc-span" id="wasteWaterTankSpan">0</span>
+                      Person
+                    </div>
+                    <div class="calc-form-group">
+                      <label for="compoundWall"
+                        >How much feet length compound wall do you require?
+                        (optional)</label
+                      >
+                      <input
+                        type="number"
+                        id="compoundWall"
+                        min="0"
+                        value="0"
+                      />
+                    </div>
+                    <div class="calc-form-group">
+                      <label for="solarPower"
+                        >How much solar power do you require? (optional)</label
+                      >
+                      <input type="number" id="solarPower" min="0" value="0" />
+                    </div>
+                  </div>
+
+
+                  <div class="summary">
+                    <h2>Total Summary</h2>
+                    <p>
+                      Construction Area In Sq.Ft:
+                      <span id="summaryArea">0</span>
+                    </p>
+                    <p>
+                      Select Construction Package: Rs.
+                      <span id="summaryPackage">0</span>
+                    </p>
+                    <p>
+                      Car Parking Area In Square Feet (Optional): Rs.
+                      <span id="summaryParking">0</span>
+                    </p>
+                    <p>Underground Sump: Rs. <span id="summarySump">0</span></p>
+                    <p>
+                      Waste Water Recycling Tank: Rs.
+                      <span id="summaryTank">0</span>
+                    </p>
+                    <p>Compound Wall: Rs. <span id="summaryWall">0</span></p>
+                    <p>Solar Power: Rs. <span id="summarySolar">0</span></p>
+                    <div class="calc-total">
+                      Total: Rs. <span id="totalCost">0</span>
+                    </div>
+                    <div class="empty-space"></div>
+                     <div class=".button-container">
+                      <button type="submit" class="calculator-button">
+                        <span style="margin-right: 8px;">📩</span> Send Enquiry
+                      </button>
+                     </div>
+
+                    <img
+                      src="./img/photo/calculator.png"
+                      class="summary-image"
+                    />
+                  </div>
+                  <!-- summary -->
+                </div>
+              <!--  containerdiv -->
             </div>
           </div>
-          <!-- banner end -->
-
-          <!-- service -->
-          <section id="service">
-            <div class="container mil-p-120-90">
-              <div class="row justify-content-between">
-                <div class="col-lg-4 mil-relative mil-mb-90">
-                  <h4 class="mil-up mil-mb-30">
-                    Your <span class="mil-thin">Approach</span> <br />and
-                    <span class="mil-thin">Work Specifics</span>
-                  </h4>
-                  <p class="mil-up mil-mb-30" style="text-align: justify;">
-                    At our agency, we have a unique approach to web design and
-                    development. We believe in creating websites that not only
-                    look great but also perform well in terms of user
-                    experience, functionality, and search engine optimization.
-                  </p>
-                  <div class="mil-up">
-                    <a
-                      href="blog-inner.html"
-                      class="mil-link mil-dark mil-arrow-place"
-                    >
-                      <span>View works</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="mil-accordion-group mil-up">
-                    <div class="mil-accordion-menu">
-                      <p class="mil-accordion-head">Residential Construction</p>
-
-                      <div class="mil-symbol mil-h3">
-                        <div class="mil-plus">+</div>
-                        <div class="mil-minus">-</div>
-                      </div>
-                    </div>
-                    <div class="mil-accordion-content">
-                      <p class="mil-mb-30" style="text-align: justify;">
-                        From custom homes to high-end apartments and villas, we work
-closely with clients to ensure their dream residences are built with the highest level of
-craftsmanship and attention to detail.
-                      </p>
-
-                      <!-- <p class="mil-mb-30">During a UX audit, a team of UX experts will conduct a thorough review of the website and provide a comprehensive report that outlines specific recommendations for improving the website's usability, accessibility, and overall user experience.</p>
-
-                                        <p class="mil-mb-30">The audit may cover various aspects of the website, such as navigation, layout, visual design, content structure, and mobile responsiveness. The goal is to identify any pain points or obstacles that users may encounter while browsing the website and provide actionable recommendations to improve their experience.</p>
-
-                                        <p class="mil-mb-30">In summary, a UX audit can help website owners identify areas of improvement that can enhance their website's user experience and increase user engagement and satisfaction.</p> -->
-                    </div>
-                  </div>
-
-                  <div class="mil-accordion-group mil-up">
-                    <div class="mil-accordion-menu">
-                      <p class="mil-accordion-head">Commercial Construction</p>
-
-                      <div class="mil-symbol mil-h3">
-                        <div class="mil-plus">+</div>
-                        <div class="mil-minus">-</div>
-                      </div>
-                    </div>
-                    <div class="mil-accordion-content">
-                      <p class="mil-mb-30" style="text-align: justify;">
-                        Specializing in office buildings, retail spaces,
-                        industrial complexes, and more, we understand the unique
-                        requirements of commercial properties and ensure they
-                        are built to optimize function, aesthetics, and
-                        long-term sustainability.
-                      </p>
-                      <!-- <p class="mil-mb-30">Design thinking encourages a human-centered approach to innovation and is often used in fields such as product design, user experience (UX) design, and business strategy to create user-centric and innovative solutions. It promotes a mindset that embraces experimentation, iteration, and continuous learning throughout the design process.</p> -->
-                    </div>
-                  </div>
-
-                  <div class="mil-accordion-group mil-up">
-                    <div class="mil-accordion-menu">
-                      <p class="mil-accordion-head">Why Choose P7 Builders?</p>
-
-                      <div class="mil-symbol mil-h3">
-                        <div class="mil-plus">+</div>
-                        <div class="mil-minus">-</div>
-                      </div>
-                    </div>
-                    <div class="mil-accordion-content">
-                      <p class="mil-mb-30" style="text-align: justify;">
-                        <span>EXPERIENCED: </span>Our team of construction
-                        experts brings a wealth of knowledge to every project,
-                        ensuring superior outcomes.
-                      </p>
-                      <p class="mil-mb-30" style="text-align: justify;">
-                        <span>TAILORED SOLUTIONS: </span>We provide customized
-                        construction strategies, carefully considering the land,
-                        location, and specific requirements of each client to
-                        deliver the best possible result.
-                      </p>
-                      <p class="mil-mb-30" style="text-align: justify;">
-                        <span>COMPREHENSIVE PROJECT MANAGEMENT: </span>From
-                        initial planning through to project completion, we
-                        manage every aspect of construction, making sure
-                        timelines are met and budgets are adhered to.
-                      </p>
-                      <p class="mil-mb-30" style="text-align: justify;">
-                        <span>SAFETY & QUALITY: </span>We prioritize safety and
-                        structural integrity, with engineers regularly
-                        inspecting every stage of the project to ensure all work
-                        meets industry standards.
-                      </p>
-                      <p class="mil-mb-30" style="text-align: justify;">
-                        <span>CLIENT CENTERED APPROACH: </span>We value the
-                        unique needs of each client and strive to deliver
-                        solutions that exceed expectations, whether for
-                        residential or commercial developments. Our engineers
-                        take extra care to evaluate the structural, mechanical,
-                        and electrical aspects of each project, guaranteeing
-                        that everything—from temporary structures to final
-                        designs—meets the highest quality and safety standards.
-                        At P7 Builders, we are dedicated to turning your dreams
-                        into reality, whether it's your ideal home or your next
-                        big business venture.
-                      </p>
-                      <p class="mil-mb-30" style="text-align: justify; color: red;">
-                        <span>NOTE: </span>Our engineers take extra care to evaluate the structural and all aspects of each project, guaranteeing that everything—from temporary structures to final designs—meets the highest quality.
-                        At P7 Builders, we are dedicated to turning your dreams into reality, whether it's your ideal home or your next big business venture.
-                    
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- <div class="mil-accordion-group mil-up">
-                                    <div class="mil-accordion-menu">
-
-                                        <p class="mil-accordion-head">Aesthetics</p>
-
-                                        <div class="mil-symbol mil-h3">
-                                            <div class="mil-plus">+</div>
-                                            <div class="mil-minus">-</div>
-                                        </div>
-
-                                    </div>
-                                    <div class="mil-accordion-content">
-                                        <p class="mil-mb-30">Aesthetics in web design focus on the visual appeal of a website, incorporating elements like colors, typography, images, and layout. It aims to create an engaging and visually pleasing user experience that reflects the brand identity and purpose of the website. A well-designed aesthetic balances visual appeal with functionality, leaving a lasting impression on users.</p>
-                                    </div>
-                                </div>
-
-                                <div class="mil-accordion-group mil-up">
-                                    <div class="mil-accordion-menu">
-
-                                        <p class="mil-accordion-head">Methodologies</p>
-
-                                        <div class="mil-symbol mil-h3">
-                                            <div class="mil-plus">+</div>
-                                            <div class="mil-minus">-</div>
-                                        </div>
-
-                                    </div>
-                                    <div class="mil-accordion-content">
-                                        <p class="mil-mb-30">Libero quam alias tempora facilis necessitatibus quis officiis voluptatem architecto harum exercitationem quidem illum eligendi. Veniam non vitae, nemo dolor tempora, necessitatibus enim sapiente quam voluptas architecto minima omnis sequi aperiam aliquam vel quo reprehenderit, tempore tenetur. Architecto dolorem assumenda voluptas, odio nemo vero illo praesentium pariatur, ut perspiciatis, est itaque minus ratione vitae laboriosam molestiae.</p>
-                                    </div>
-                                </div> -->
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- service 1 end -->
-
-          <!-- prices -->
-          <div class="calc-container">
-            <div class="calculator">
-                <h2 class="calc-h2">House Construction Cost Calculator</h2>
-                <div class="calc-form-group">
-                    <label for="constructionArea">Construction area in sq.ft</label>
-                    <input type="number" id="constructionArea" min="0" max="10000" value="0">
-                </div>
-                <div class="calc-form-group">
-                    <label for="constructionPackage">Select construction Package</label>
-                    <select id="constructionPackage">
-                        <option value="0">Select value</option>
-                        <option value="1500">Basic - Rs. 1500/sq.ft</option>
-                        <option value="1800">Standard - Rs. 1800/sq.ft</option>
-                        <option value="2500">Premium - Rs. 2500/sq.ft</option>
-                    </select>
-                </div>
-                <div class="calc-form-group">
-                    <label for="carParkingArea">Car Parking area in square feet (optional)</label>
-                    <input type="number" id="carParkingArea" min="0" max="10000" value="0">
-                </div>
-                <div class="calc-form-group">
-                    <label for="undergroundSumpRange">How many litres of underground sump required? (optional)</label>
-                    <input type="range" id="undergroundSumpRange" min="0" max="20000" step="1000" value="0">
-                    <span class="calc-span" id="undergroundSumpSpan">0</span> litres
-                </div>
-                <div class="calc-form-group">
-                    <label for="wasteWaterTankRange">How many person waste water recycling tank required? (optional)</label>
-                    <input type="range" id="wasteWaterTankRange" min="0" max="10" value="0">
-                    <span class="calc-span" id="wasteWaterTankSpan">0</span> Person
-                </div>
-                <div class="calc-form-group">
-                    <label for="compoundWall">How much feet length compound wall do you require? (optional)</label>
-                    <input type="number" id="compoundWall" min="0" value="0">
-                </div>
-                <div class="calc-form-group">
-                    <label for="solarPower">How much solar power do you require? (optional)</label>
-                    <input type="number" id="solarPower" min="0" value="0">
-                </div>
-            </div>
-        
-            <div class="summary">
-                <h2>Total Summary</h2>
-                <p>Construction Area In Sq.Ft: <span id="summaryArea">0</span></p>
-                <p>Select Construction Package: Rs. <span id="summaryPackage">0</span></p>
-                <p>Car Parking Area In Square Feet (Optional): Rs. <span id="summaryParking">0</span></p>
-                <p>Underground Sump: Rs. <span id="summarySump">0</span></p>
-                <p>Waste Water Recycling Tank: Rs. <span id="summaryTank">0</span></p>
-                <p>Compound Wall: Rs. <span id="summaryWall">0</span></p>
-                <p>Solar Power: Rs. <span id="summarySolar">0</span></p>
-                <div class="calc-total">Total: Rs. <span id="totalCost">0</span></div>
-                <div class="empty-space"></div>
-        
-                <button type="submit" class="calc-button" onclick="chatWithp7()">Send Enquiry</button>
-            </div>
-        </div>
-          
-          <!-- prices end -->
 
           <!-- other services -->
-          <section class="sec-spacing">
-            <h1 class="design">Our Process</h1>
-            <p class="subtitle">Our Home Construction Steps are Simple and Easy to Understand</p>
-          
+          <section id="calc-section" class="sec-spacing">
+            <h1 class="design">
+              <span class="sec-span">-</span> Our Process
+              <span class="sec-span">-</span>
+            </h1>
+            <p class="subtitle">
+              Our Home Construction Steps are Simple and Easy to Understand
+            </p>
+
             <div class="timeline-container">
               <div class="timeline-step">
                 <div class="circle">1</div>
-                <div class="step-content">Fill out the enquiry form, and our team will reach you to understand your needs.</div>
+                <div class="step-content">
+                  Fill out the enquiry form, and our team will reach you to
+                  understand your needs.
+                </div>
               </div>
               <div class="timeline-step">
                 <div class="circle">2</div>
-                <div class="step-content">Our project team will visit your site for analysis.</div>
+                <div class="step-content">
+                  Our project team will visit your site for analysis.
+                </div>
               </div>
               <div class="timeline-step">
                 <div class="circle">3</div>
-                <div class="step-content">We will initiate the design phase and begin the approval process.</div>
+                <div class="step-content">
+                  We will initiate the design phase and begin the approval
+                  process.
+                </div>
               </div>
               <div class="timeline-step">
                 <div class="circle">4</div>
-                <div class="step-content">A detailed quotation, including specifications and payment terms, will be provided to you.</div>
+                <div class="step-content">
+                  A detailed quotation, including specifications and payment
+                  terms, will be provided to you.
+                </div>
               </div>
               <div class="timeline-step">
                 <div class="circle">5</div>
-                <div class="step-content">Once you pay the booking amount and sign the construction agreement, we will commence the work.</div>
+                <div class="step-content">
+                  Once you pay the booking amount and sign the construction
+                  agreement, we will commence the work.
+                </div>
               </div>
               <div class="timeline-step">
                 <div class="circle">6</div>
-                <div class="step-content">Sit back and relax while we build your dream home, and track the progress of your project via our app.</div>
+                <div class="step-content">
+                  Sit back and relax while we build your dream home, and track
+                  the progress of your project via our app.
+                </div>
               </div>
             </div>
-           
           </section>
-          
+
           <!-- other services end -->
 
           <!-- footer -->
@@ -558,7 +487,10 @@ craftsmanship and attention to detail.
                       Reach us for your houseGoals:
                     </p>
 
-                    <form class="mil-subscribe-form mil-up" onclick="chatWithUs()">
+                    <form
+                      class="mil-subscribe-form mil-up"
+                      onclick="chatWithUs()"
+                    >
                       <input type="text" placeholder="Chat With Us" disabled />
                       <button
                         type="submit"
@@ -624,24 +556,26 @@ craftsmanship and attention to detail.
                         <h6 class="mil-muted mil-up mil-mb-30">Address</h6>
 
                         <p class="mil-light-soft mil-up">
-                            4a/135 SMT Housing Board,State Bank Colony, Tuticorin,
+                          4a/135 SMT Housing Board,State Bank Colony, Tuticorin,
                           <span class="mil-no-wrap"></span>
                         </p>
-                      <p class="mil-light-soft mil-up">
-                        Tamilnadu – 628002,
-                      <span class="mil-no-wrap"></span>
-                    </p>
-                    <p class="mil-light-soft mil-up">
-                      India.
-                    <span class="mil-no-wrap"></span>
-                  </p>
+                        <p class="mil-light-soft mil-up">
+                          Tamilnadu – 628002,
+                          <span class="mil-no-wrap"></span>
+                        </p>
+                        <p class="mil-light-soft mil-up">
+                          India.
+                          <span class="mil-no-wrap"></span>
+                        </p>
                       </div>
                       <div class="col-md-6 col-lg-5 mil-mb-60">
                         <h6 class="mil-muted mil-up mil-mb-30">Reach Us</h6>
 
-                        <p class="mil-light-soft mil-up"> 
-                            Ph: +91 9384 404 707
-                            <span class="mil-no-wrap cmpnyMail" onclick="gMail()">Mail: p7builder@gmail.com</span>
+                        <p class="mil-light-soft mil-up">
+                          Ph: +91 9384 404 707
+                          <span class="mil-no-wrap cmpnyMail" onclick="gMail()"
+                            >Mail: p7builder@gmail.com</span
+                          >
                         </p>
                       </div>
                     </div>
@@ -651,39 +585,48 @@ craftsmanship and attention to detail.
                       <div class="mil-mb-30">
                         <ul class="mil-social-icons mil-up">
                           <li>
-                            <a onclick="instagramLink()"rel="noopener noreferrer"class="social-icon">
-                                <i class="fab fa-instagram"></i>
+                            <a
+                              onclick="instagramLink()"
+                              rel="noopener noreferrer"
+                              class="social-icon"
+                            >
+                              <i class="fab fa-instagram"></i>
                             </a>
-
-                            
-                            
                           </li>
                           <li>
-                            <a onclick="fbLink()"rel="noopener noreferrer"class="social-icon">
+                            <a
+                              onclick="fbLink()"
+                              rel="noopener noreferrer"
+                              class="social-icon"
+                            >
                               <i class="fab fa-facebook"></i
                             ></a>
                           </li>
                           <li>
                             <a
-                            onclick="ytLink()" rel="noopener noreferrer"
+                              onclick="ytLink()"
+                              rel="noopener noreferrer"
                               class="social-icon"
                             >
                               <i class="fab fa-youtube"></i
                             ></a>
                           </li>
                           <!-- <li>
-                            <a
-                              href="index.html#."
-                              target="_blank"
-                              class="social-icon"
-                            >
-                              <i class="fab fa-youtube"></i
-                            ></a>
-                          </li> -->
+                  <a
+                    href="index.html#."
+                    target="_blank"
+                    class="social-icon"
+                  >
+                    <i class="fab fa-youtube"></i
+                  ></a>
+                </li> -->
                         </ul>
                       </div>
                       <p class="mil-light-soft mil-up">
-                        P7 Builders © Copyright 2024. Powered by <a class="cmpnyWebsite" onclick="companyWebsite()">Digisailor</a>
+                        P7 Builders © Copyright 2024. Powered by
+                        <a class="cmpnyWebsite" onclick="companyWebsite()"
+                          >Digisailor</a
+                        >
                       </p>
                     </div>
                   </div>
@@ -847,14 +790,10 @@ craftsmanship and attention to detail.
               />
             </svg>
           </div>
-          <!-- hidden elements end -->
         </div>
-      </div>
-      <!-- content -->
+      </main>
     </div>
-    <!-- wrapper end -->
 
-    <!-- jQuery js -->
     <script src="js/plugins/jquery.min.js"></script>
     <!-- swup js -->
     <script src="js/plugins/swup.min.js"></script>
@@ -872,63 +811,5 @@ craftsmanship and attention to detail.
     <script src="js/plugins/ScrollTo.min.js"></script>
     <!-- index js -->
     <script src="js/main.js"></script>
-
-    <!-- <script>
-        function updateSummary() {
-            const constructionArea = Number(document.getElementById('constructionArea').value);
-            const packageRate = Number(document.getElementById('constructionPackage').value);
-            const parkingArea = Number(document.getElementById('carParkingArea').value);
-            const sumpLitres = Number(document.getElementById('undergroundSump').value);
-            const wasteWaterTank = Number(document.getElementById('wasteWaterTank').value);
-            const compoundWall = Number(document.getElementById('compoundWall').value);
-            const solarPower = Number(document.getElementById('solarPower').value);
-    
-            const constructionCost = constructionArea * packageRate;
-            const parkingCost = parkingArea * 1800;
-            const sumpCost = sumpLitres * 25;
-            const tankCost = wasteWaterTank * 30000;
-            const wallCost = compoundWall * 2000;
-            const solarCost = solarPower * 75000;
-    
-            const totalCost = constructionCost + parkingCost + sumpCost + tankCost + wallCost + solarCost;
-    
-            document.getElementById('summaryArea').innerText = constructionArea;
-            document.getElementById('summaryPackage').innerText = constructionCost;
-            document.getElementById('summaryParking').innerText = parkingCost;
-            document.getElementById('summarySump').innerText = sumpCost;
-            document.getElementById('summaryTank').innerText = tankCost;
-            document.getElementById('summaryWall').innerText = wallCost;
-            document.getElementById('summarySolar').innerText = solarCost;
-            document.getElementById('totalCost').innerText = totalCost.toFixed(2);
-        }
-    
-        const inputs = [
-            'constructionArea', 
-            'constructionPackage', 
-            'carParkingArea', 
-            'undergroundSump', 
-            'wasteWaterTank', 
-            'compoundWall', 
-            'solarPower'
-        ];
-    
-        inputs.forEach(id => {
-            document.getElementById(id).addEventListener('input', updateSummary);
-        });
-    
-        // Update sump and tank value text dynamically
-        document.getElementById('undergroundSump').addEventListener('input', function () {
-            document.getElementById('undergroundSumpValue').innerText = this.value;
-        });
-    
-        document.getElementById('wasteWaterTank').addEventListener('input', function () {
-            document.getElementById('wasteWaterTankValue').innerText = this.value;
-        });
-    
-        // Initialize summary on page load
-        updateSummary();
-    </script> -->
   </body>
 </html>
-
-

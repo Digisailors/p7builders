@@ -1122,56 +1122,16 @@ function activateStep(stepIndex) {
 
 // Loop the timeline steps infinitely
 function startTimeline() {
-  activateStep(currentStep);
-  currentStep++;
-
-  if (currentStep >= steps.length) {
-    currentStep = 0; // Reset to the first step for looping
-  }
-
-  setTimeout(startTimeline, 2000); // Change every 2 seconds
+    setInterval(() => {
+        activateStep(currentStep);
+        currentStep = (currentStep + 1) % steps.length; // Loop back to the first step
+    }, 2000); // Change every 2 seconds
 }
 
 // Start the process
 window.onload = startTimeline;
 
 
-
-//whatsapp summary
-// function updateSummary() {
-//     // Get input values and ensure they are valid numbers
-//     const constructionArea = parseFloat(document.getElementById("constructionArea").value) || 0;
-//     const constructionPackage = document.getElementById("constructionPackage").value;
-//     const constructionPackageValue = constructionPackage !== "0" ? parseFloat(constructionPackage) : 0;
-//     const carParkingArea = parseFloat(document.getElementById("carParkingArea").value) || 0;
-//     const undergroundSump = parseFloat(document.getElementById("undergroundSumpRange").value) || 0;
-//     const wasteWaterTank = parseFloat(document.getElementById("wasteWaterTankRange").value) || 0;
-//     const compoundWall = parseFloat(document.getElementById("compoundWall").value) || 0;
-//     const solarPower = parseFloat(document.getElementById("solarPower").value) || 0;
-
-//     // Calculate the individual costs
-//     const packageCost = constructionPackageValue === 0 ? 0 : constructionArea * constructionPackageValue;
-//     const parkingCost = carParkingArea * 200; // Rs. 200/sq.ft for car parking
-//     const sumpCost = undergroundSump * 10; // Rs. 10 per litre for sump
-//     const tankCost = wasteWaterTank * 5000; // Rs. 5000 per person for waste water tank
-//     const wallCost = compoundWall * 1000; // Rs. 1000 per foot for compound wall
-//     const solarCost = solarPower * 15000; // Rs. 15000 per unit for solar power
-
-//     // Calculate total cost
-//     const totalCost = packageCost + parkingCost + sumpCost + tankCost + wallCost + solarCost;
-
-//     // Update the summary section
-//     document.getElementById("summaryArea").innerText = constructionArea;
-//     document.getElementById("summaryPackage").innerText = packageCost;
-//     document.getElementById("summaryParking").innerText = parkingCost;
-//     document.getElementById("summarySump").innerText = sumpCost;
-//     document.getElementById("summaryTank").innerText = tankCost;
-//     document.getElementById("summaryWall").innerText = wallCost;
-//     document.getElementById("summarySolar").innerText = solarCost;
-//     document.getElementById("totalCost").innerText = totalCost;
-
-//     return totalCost; // Return total cost for use in WhatsApp message
-// }
 
 // Function to send the enquiry via WhatsApp
 document.addEventListener("DOMContentLoaded", function () {
@@ -1239,7 +1199,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("solarPower").addEventListener("input", updateSummary);
 
     // Attach the event listener to the button
-    document.querySelector('.calc-button').addEventListener('click', chatWithp7);
+    document.querySelector('.calculator-button').addEventListener('click', chatWithp7);
 
     // Initialize the summary on page load
     updateSummary();
