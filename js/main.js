@@ -1093,13 +1093,12 @@ function scrollToBottom() {
 //     return false; // Prevent further processing
 // }
 
-// function openWhatsApp() {
-//     // Replace the number below with your WhatsApp number
-//     const phoneNumber = "919384404707"; 
-//     const message = "Hello! I need assistance.";
-//     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-//     window.open(url, "_blank");
-// }
+function openWhatsApp() {
+    const phoneNumber = "919384404707"; 
+    const message = "Hello! I need assistance.";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+}
 //dynamic process
 const steps = document.querySelectorAll('.timeline-step');
 let currentStep = 0;
