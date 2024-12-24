@@ -4339,3 +4339,305 @@ html.is-animating .mil-menu-frame {
 .floating-whatsapp:hover {
   transform: scale(1.1);
 }
+
+/* calculator */
+.calc-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-color: black;
+  flex-wrap: wrap; /* Ensures items wrap on smaller screens */
+}
+
+.calculator, .summary {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 600px;
+  max-width: 100%; 
+  box-sizing: border-box; 
+}
+
+.summary p {
+  margin: 10px 0; 
+  line-height: 2.0;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+  .calc-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the stacked elements */
+    padding: 10px;
+  }
+
+  .calculator, .summary {
+    width: 100%; /* Take full width of the screen */
+    max-width: 500px; /* Cap the maximum width */
+    margin: 10px 0; /* Add spacing between the stacked elements */
+  }
+}
+
+.calc-h2 {
+  margin-top: 0;
+}
+
+.calc-form-group {
+  margin-bottom: 5px;
+}
+
+.calc-form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.calc-form-group input, .calc-form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.calc-form-group input[type="range"] {
+  width: 100%;
+}
+
+.calc-span{
+  margin-bottom:20px ;
+  color: rgb(14, 93, 146);
+}
+
+.calc-total {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.empty-space{
+  height: 80px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.calculator-button {
+  background: linear-gradient(135deg, #ff7300, #fae100);
+  margin: auto;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.calculator-button:hover {
+  animation: pulse 1s infinite;
+  background: linear-gradient(135deg, #9d61ff, #6c63ff);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  }
+}
+.calculator-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* summary image */
+.summary-image {
+  display: block; /* Ensure the image is visible on large screens */
+  width: 100%; /* Adjust width as needed */
+  max-width: 400px; /* Limit the width for better design */
+  margin: 20px auto; /* Center the image and add spacing */
+}
+
+/* Hide the image on small screens */
+@media (max-width: 768px) {
+  .summary-image {
+    display: none;
+  }
+}
+
+/* .sec-spacing{
+  height: 600px;
+  overflow: scroll;
+} */
+
+.sec-spacing{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  /* padding: 20px;  */
+  box-sizing: border-box; 
+  overflow: auto;
+}
+
+.sec-span{
+  color: #f9c940;
+  font-size: 2.5rem;
+}
+
+h1.design {
+  color: #333;
+  font-size: 2.5rem; /* Customize heading size */
+  margin-top: 30px;
+  margin-bottom: 10px; 
+
+}
+
+p.subtitle {
+  color: #666;
+  font-size: 1.2rem; /* Customize subtitle size */
+  margin-top: 0; /* Remove any default top margin */
+  margin-bottom: 100px;
+  
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
+  /* border: 1px solid green; */
+}
+
+.timeline-container::after {
+  content: "";
+  position: absolute;
+  top: 25px; /* Adjust based on the height of the circle */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ddd;
+  z-index: -1;
+}
+
+.timeline-step {
+  /* flex: 1; */
+  /* border: 1px solid red; */
+  text-align: center;
+  width: 250px;
+  /* position: relative; */
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: #fff; /* Default: white */
+      color: #333; /* Default text color */  
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+.circle.active {
+  background-color: #f9c940; /* Orange */
+  color: white;
+}
+
+.step-content {
+  text-align: justify;
+  width: 120px;
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+  margin: auto;
+}
+
+.step-content.active {
+  font-weight: bold;
+  color: #020202;
+}
+
+.step-content span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+}
+
+/* Ensure the line always aligns with the circles */
+.timeline-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 25px; /* Same as the top of the main line */
+  right: -50%; /* Half the width of the space between steps */
+  width: 100%;
+  height: 2px;
+  background: #ddd;
+  z-index: -1;
+}
+
+.timeline-step:last-child::after {
+  content: none;
+}
+/* Responsive styles for tablets */
+@media (max-width: 768px) {
+  .timeline-container {
+    flex-wrap: wrap; /* Allow steps to wrap to the next line */
+    justify-content: center; /* Center the steps */
+  }
+
+  .timeline-step {
+    width: 45%; /* Adjust width for smaller screens */
+    margin-bottom: 30px; /* Add spacing between rows */
+  }
+
+  .timeline-container::after {
+    display: none; /* Hide the main timeline line */
+  }
+
+  .timeline-step:not(:last-child)::after {
+    display: none; /* Hide connecting lines between steps */
+  }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 480px) {
+  .timeline-step {
+    width: 100%; /* Full width for each step */
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .step-content {
+    font-size: 12px;
+  }
+
+  p.subtitle {
+    font-size: 14px;
+  }
+}
+.extra-space{
+  height: 90px;
+}
