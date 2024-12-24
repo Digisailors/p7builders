@@ -1093,10 +1093,154 @@ function scrollToBottom() {
 //     return false; // Prevent further processing
 // }
 
-function openWhatsApp() {
-    // Replace the number below with your WhatsApp number
-    const phoneNumber = "919384404707"; 
-    const message = "Hello! I need assistance.";
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+// function openWhatsApp() {
+//     // Replace the number below with your WhatsApp number
+//     const phoneNumber = "919384404707"; 
+//     const message = "Hello! I need assistance.";
+//     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+//     window.open(url, "_blank");
+// }
+//dynamic process
+const steps = document.querySelectorAll('.timeline-step');
+let currentStep = 0;
+
+function activateStep(stepIndex) {
+  // Reset all steps
+  steps.forEach((step, index) => {
+    const circle = step.querySelector('.circle');
+    const content = step.querySelector('.step-content');
+
+    if (index <= stepIndex) {
+      circle.classList.add('active');
+      content.classList.add('active');
+    } else {
+      circle.classList.remove('active');
+      content.classList.remove('active');
+    }
+  });
 }
+
+// Loop the timeline steps infinitely
+function startTimeline() {
+  activateStep(currentStep);
+  currentStep++;
+
+  if (currentStep >= steps.length) {
+    currentStep = 0; // Reset to the first step for looping
+  }
+
+  setTimeout(startTimeline, 2000); // Change every 2 seconds
+}
+
+// Start the process
+window.onload = startTimeline;
+
+
+
+//whatsapp summary
+// function updateSummary() {
+//     // Get input values and ensure they are valid numbers
+//     const constructionArea = parseFloat(document.getElementById("constructionArea").value) || 0;
+//     const constructionPackage = document.getElementById("constructionPackage").value;
+//     const constructionPackageValue = constructionPackage !== "0" ? parseFloat(constructionPackage) : 0;
+//     const carParkingArea = parseFloat(document.getElementById("carParkingArea").value) || 0;
+//     const undergroundSump = parseFloat(document.getElementById("undergroundSumpRange").value) || 0;
+//     const wasteWaterTank = parseFloat(document.getElementById("wasteWaterTankRange").value) || 0;
+//     const compoundWall = parseFloat(document.getElementById("compoundWall").value) || 0;
+//     const solarPower = parseFloat(document.getElementById("solarPower").value) || 0;
+
+//     // Calculate the individual costs
+//     const packageCost = constructionPackageValue === 0 ? 0 : constructionArea * constructionPackageValue;
+//     const parkingCost = carParkingArea * 200; // Rs. 200/sq.ft for car parking
+//     const sumpCost = undergroundSump * 10; // Rs. 10 per litre for sump
+//     const tankCost = wasteWaterTank * 5000; // Rs. 5000 per person for waste water tank
+//     const wallCost = compoundWall * 1000; // Rs. 1000 per foot for compound wall
+//     const solarCost = solarPower * 15000; // Rs. 15000 per unit for solar power
+
+//     // Calculate total cost
+//     const totalCost = packageCost + parkingCost + sumpCost + tankCost + wallCost + solarCost;
+
+//     // Update the summary section
+//     document.getElementById("summaryArea").innerText = constructionArea;
+//     document.getElementById("summaryPackage").innerText = packageCost;
+//     document.getElementById("summaryParking").innerText = parkingCost;
+//     document.getElementById("summarySump").innerText = sumpCost;
+//     document.getElementById("summaryTank").innerText = tankCost;
+//     document.getElementById("summaryWall").innerText = wallCost;
+//     document.getElementById("summarySolar").innerText = solarCost;
+//     document.getElementById("totalCost").innerText = totalCost;
+
+//     return totalCost; // Return total cost for use in WhatsApp message
+// }
+
+// Function to send the enquiry via WhatsApp
+document.addEventListener("DOMContentLoaded", function () {
+    function updateSummary() {
+        const constructionArea = parseFloat(document.getElementById("constructionArea").value) || 0;
+        const constructionPackage = document.getElementById("constructionPackage").value;
+        const constructionPackageValue = constructionPackage !== "0" ? parseFloat(constructionPackage) : 0;
+        const carParkingArea = parseFloat(document.getElementById("carParkingArea").value) || 0;
+        const undergroundSump = parseFloat(document.getElementById("undergroundSumpRange").value) || 0;
+        const wasteWaterTank = parseFloat(document.getElementById("wasteWaterTankRange").value) || 0;
+        const compoundWall = parseFloat(document.getElementById("compoundWall").value) || 0;
+        const solarPower = parseFloat(document.getElementById("solarPower").value) || 0;
+
+        const packageCost = constructionPackageValue === 0 ? 0 : constructionArea * constructionPackageValue;
+        const parkingCost = carParkingArea * 200;
+        const sumpCost = undergroundSump * 10;
+        const tankCost = wasteWaterTank * 5000;
+        const wallCost = compoundWall * 1000;
+        const solarCost = solarPower * 15000;
+
+        const totalCost = packageCost + parkingCost + sumpCost + tankCost + wallCost + solarCost;
+
+        document.getElementById("summaryArea").innerText = constructionArea;
+        document.getElementById("summaryPackage").innerText = packageCost;
+        document.getElementById("summaryParking").innerText = parkingCost;
+        document.getElementById("summarySump").innerText = sumpCost;
+        document.getElementById("summaryTank").innerText = tankCost;
+        document.getElementById("summaryWall").innerText = wallCost;
+        document.getElementById("summarySolar").innerText = solarCost;
+        document.getElementById("totalCost").innerText = totalCost;
+
+        return totalCost;
+    }
+
+    function chatWithp7() {
+        const totalCost = updateSummary();
+
+        const constructionArea = document.getElementById("constructionArea").value;
+        const constructionPackage = document.getElementById("constructionPackage").options[document.getElementById("constructionPackage").selectedIndex].text;
+        const carParkingArea = document.getElementById("carParkingArea").value;
+        const undergroundSump = document.getElementById("undergroundSumpRange").value;
+        const wasteWaterTank = document.getElementById("wasteWaterTankRange").value;
+        const compoundWall = document.getElementById("compoundWall").value;
+        const solarPower = document.getElementById("solarPower").value;
+
+        const message = `House Construction Enquiry:\n\nConstruction Area: ${constructionArea} sq.ft,\nPackage Selected: ${constructionPackage},\nCar Parking Area: ${carParkingArea} sq.ft,\nUnderground Sump: ${undergroundSump} litres,\nWaste Water Tank: ${wasteWaterTank} person,\nCompound Wall Length: ${compoundWall} feet,\nSolar Power: ${solarPower} units,\n\nTotal Estimated Cost: Rs. ${totalCost}`;
+
+        const whatsappUrl = `https://wa.me/919384404707?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    }
+
+    // Add event listeners for all input elements
+    document.getElementById("constructionArea").addEventListener("input", updateSummary);
+    document.getElementById("constructionPackage").addEventListener("change", updateSummary);
+    document.getElementById("carParkingArea").addEventListener("input", updateSummary);
+    document.getElementById("undergroundSumpRange").addEventListener("input", function () {
+        document.getElementById("undergroundSumpSpan").innerText = this.value;
+        updateSummary();
+    });
+    document.getElementById("wasteWaterTankRange").addEventListener("input", function () {
+        document.getElementById("wasteWaterTankSpan").innerText = this.value;
+        updateSummary();
+    });
+    document.getElementById("compoundWall").addEventListener("input", updateSummary);
+    document.getElementById("solarPower").addEventListener("input", updateSummary);
+
+    // Attach the event listener to the button
+    document.querySelector('.calc-button').addEventListener('click', chatWithp7);
+
+    // Initialize the summary on page load
+    updateSummary();
+});
