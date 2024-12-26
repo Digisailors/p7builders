@@ -861,6 +861,7 @@ spaces
 }
 
 .mil-mb-30 {
+  text-align: justify;
   margin-bottom: 30px;
 }
 
@@ -900,7 +901,10 @@ spaces
     padding-bottom: 90px;
   }
 }
-
+.mil-p-50-30{
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
 .mil-p-120-90 {
   padding-top: 120px;
   padding-bottom: 90px;
@@ -4316,6 +4320,7 @@ html.is-animating .mil-menu-frame {
  /* floating whatsapp */
  .floating-whatsapp {
   position: fixed;
+  cursor: pointer;
   bottom: 20px;
   right: 20px;
   z-index: 1000;
@@ -4533,6 +4538,12 @@ p.subtitle {
   margin-bottom: 100px;
   
 }
+.summary-text{
+  text-align: justify;
+  width: 80%;
+  margin-top: 40px;
+  font-size: 1rem;
+}
 
 .timeline-container {
   display: flex;
@@ -4660,4 +4671,9 @@ p.subtitle {
 }
 .extra-space{
   height: 90px;
+}
+
+/* service image */
+.service-img{
+  width: 300px;
 }

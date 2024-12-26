@@ -1092,13 +1092,23 @@ function scrollToBottom() {
 //     document.getElementById("myForm").reset();
 //     return false; // Prevent further processing
 // }
-
+//whatsapp icon on index page
 function openWhatsApp() {
     const phoneNumber = "919384404707"; 
     const message = "Hello! I need assistance.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const whatsappIcon = document.querySelector(".floating-whatsapp");
+    if (whatsappIcon) {
+      whatsappIcon.style.display = "flex"; // Make it visible
+    //   console.log("WhatsApp icon reinitialized.");
+    }
+  });
+
+  //whatsapp end
 //dynamic process
 const steps = document.querySelectorAll('.timeline-step');
 let currentStep = 0;
