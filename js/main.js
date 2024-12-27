@@ -1103,6 +1103,13 @@ function openWhatsApp() {
     window.open(url, "_blank");
 }
 
+// footer call
+function makeCall() {
+    
+    window.location.href = "tel:+919384404707";
+  }
+// footer call end 
+
 document.addEventListener("DOMContentLoaded", () => {
     const whatsappIcon = document.querySelector(".floating-whatsapp");
     if (whatsappIcon) {

@@ -101,7 +101,13 @@
                                             <li><a href="portfolio-3.html">Portfolio slider</a></li>
                                         </ul> -->
                     </li>
-                    <li class="mil-has-children">
+                   
+
+                      <li class="mil-has-children">
+                        <a href="team.html#.">About Us</a>
+                      </li>
+                      
+                      <li class="mil-has-children">
                       <a href="portfolio-1.html">Portfolio</a>
                       <!-- <ul>
                                             <li><a href="portfolio-1.html">Grid type 1</a></li>
@@ -128,14 +134,7 @@
                       <a class="calc-pointer" onclick="calculatorRedirect()">Cost Calculator</a>
                     </li>
 
-                    <li class="mil-has-children">
-                      <a href="team.html#.">About Us</a>
-                      <!-- <ul>
-                                            <li><a href="team.html">Team</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul> -->
-                    </li>
+                    
                     <li class="mil-has-children">
                       <a href="contact.html">Contact Us</a>
                       <!-- <ul>
@@ -271,8 +270,8 @@ Tuticorin, Tamilnadu – 628002
           <div class="mil-current-page"></div>
           <div class="mil-back-to-top">
             <a
-              href="index.html#top"
-              onclick="scrollToTop()"
+              href="#top"
+              
               class="mil-link mil-dark mil-arrow-place"
             >
               <span>Back to top</span>
@@ -286,7 +285,7 @@ Tuticorin, Tamilnadu – 628002
       
       
       <!-- content -->
-      <div class="mil-content">
+      <div class="mil-content" id="top">
         <div id="swupMain" class="mil-main-transition">
           <!-- banner -->
           <section class="mil-banner mil-dark-bg">
@@ -455,7 +454,11 @@ Tuticorin, Tamilnadu – 628002
           <!-- video start -->
            <section>
              <div class="index-video-container">
-              <iframe src="https://www.youtube.com/embed/ZAennsTWJSc?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=ZAennsTWJSc" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <!-- <iframe src="https://www.youtube.com/embed/ZAennsTWJSc?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=ZAennsTWJSc" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+              <video autoplay muted loop >
+                <source src="img/works/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
              </div>
            </section>
           <!-- video end <div class="html5-video-container" data-layer="0"><video tabindex="-1" class="video-stream html5-main-video" webkit-playsinline="" playsinline="" controlslist="nodownload" style="width: 1100px; height: 619px; left: 0px; top: 4px;" src="blob:https://www.youtube.com/131b7bbc-dc74-4e52-8be2-7f90ffb610f5"></video></div> -->
@@ -1022,7 +1025,7 @@ honest.keep rocking...all the best for upcoming projects...
           <div class="mil-soft-bg">
             <div class="container mil-p-0-120">
               <div class="swiper-container mil-infinite-show mil-up">
-                <marquee><h1 class="mil-mb-60">Reach us for Your House Goals <span class="mil-thin">& </span>P7 Builders</h1></marquee>
+                <marquee scrollAmount="20"><h1 class="mil-mb-60">Reach us for Your House Goals <span class="mil-thin">& </span>P7 Builders</h1></marquee>
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <!-- <a
@@ -1303,7 +1306,7 @@ honest.keep rocking...all the best for upcoming projects...
 
                         <p class="mil-light-soft mil-up phone-link"> 
                             Ph:
-                            <a href="tel:+919384404707"> +91 9384 404 707</a>
+                            <a onclick="makeCall()"> +91 9384 404 707</a>
                           </p>
                           <p class="mil-light-soft mil-up cmpnyMail" onclick="gMail()">Mail: p7builder@gmail.com</p>
                       </div>
