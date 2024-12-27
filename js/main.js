@@ -1080,6 +1080,9 @@ function scrollToBottom() {
     window.open("https://www.digisailor.com/","_blank");
   }
 
+  function calculatorRedirect(){
+    window.location.href = "calculator.html";
+  }
 //   function redirectAfterSubmit() {
 //     // Redirect to the desired URL
 //     window.location.href = "https://suman-seelan.github.io/P7-UI/contact.html";
@@ -1143,73 +1146,94 @@ window.onload = startTimeline;
 
 
 // Function to send the enquiry via WhatsApp
-document.addEventListener("DOMContentLoaded", function () {
-    function updateSummary() {
-        const constructionArea = parseFloat(document.getElementById("constructionArea").value) || 0;
-        const constructionPackage = document.getElementById("constructionPackage").value;
-        const constructionPackageValue = constructionPackage !== "0" ? parseFloat(constructionPackage) : 0;
-        const carParkingArea = parseFloat(document.getElementById("carParkingArea").value) || 0;
-        const undergroundSump = parseFloat(document.getElementById("undergroundSumpRange").value) || 0;
-        const wasteWaterTank = parseFloat(document.getElementById("wasteWaterTankRange").value) || 0;
-        const compoundWall = parseFloat(document.getElementById("compoundWall").value) || 0;
-        const solarPower = parseFloat(document.getElementById("solarPower").value) || 0;
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if the necessary elements are available
+    setTimeout(function() {
+    const constructionAreaElement = document.getElementById("constructionArea");
+    const constructionPackageElement = document.getElementById("constructionPackage");
+    const carParkingAreaElement = document.getElementById("carParkingArea");
+    const undergroundSumpElement = document.getElementById("undergroundSumpRange");
+    const wasteWaterTankElement = document.getElementById("wasteWaterTankRange");
+    const compoundWallElement = document.getElementById("compoundWall");
+    const solarPowerElement = document.getElementById("solarPower");
 
-        const packageCost = constructionPackageValue === 0 ? 0 : constructionArea * constructionPackageValue;
-        const parkingCost = carParkingArea * 200;
-        const sumpCost = undergroundSump * 10;
-        const tankCost = wasteWaterTank * 5000;
-        const wallCost = compoundWall * 1000;
-        const solarCost = solarPower * 15000;
+    // Ensure all elements exist before adding event listeners
+    if (constructionAreaElement && constructionPackageElement && carParkingAreaElement &&
+        undergroundSumpElement && wasteWaterTankElement && compoundWallElement && solarPowerElement) {
+        
+        // Function to update the summary
+        function updateSummary() {
+            const constructionArea = parseFloat(constructionAreaElement.value) || 0;
+            const constructionPackage = constructionPackageElement.value;
+            const constructionPackageValue = constructionPackage !== "0" ? parseFloat(constructionPackage) : 0;
+            const carParkingArea = parseFloat(carParkingAreaElement.value) || 0;
+            const undergroundSump = parseFloat(undergroundSumpElement.value) || 0;
+            const wasteWaterTank = parseFloat(wasteWaterTankElement.value) || 0;
+            const compoundWall = parseFloat(compoundWallElement.value) || 0;
+            const solarPower = parseFloat(solarPowerElement.value) || 0;
 
-        const totalCost = packageCost + parkingCost + sumpCost + tankCost + wallCost + solarCost;
+            const packageCost = constructionPackageValue === 0 ? 0 : constructionArea * constructionPackageValue;
+            const parkingCost = carParkingArea * 200;
+            const sumpCost = undergroundSump * 10;
+            const tankCost = wasteWaterTank * 5000;
+            const wallCost = compoundWall * 1000;
+            const solarCost = solarPower * 15000;
 
-        document.getElementById("summaryArea").innerText = constructionArea;
-        document.getElementById("summaryPackage").innerText = packageCost;
-        document.getElementById("summaryParking").innerText = parkingCost;
-        document.getElementById("summarySump").innerText = sumpCost;
-        document.getElementById("summaryTank").innerText = tankCost;
-        document.getElementById("summaryWall").innerText = wallCost;
-        document.getElementById("summarySolar").innerText = solarCost;
-        document.getElementById("totalCost").innerText = totalCost;
+            const totalCost = packageCost + parkingCost + sumpCost + tankCost + wallCost + solarCost;
 
-        return totalCost;
-    }
+            document.getElementById("summaryArea").innerText = constructionArea;
+            document.getElementById("summaryPackage").innerText = packageCost;
+            document.getElementById("summaryParking").innerText = parkingCost;
+            document.getElementById("summarySump").innerText = sumpCost;
+            document.getElementById("summaryTank").innerText = tankCost;
+            document.getElementById("summaryWall").innerText = wallCost;
+            document.getElementById("summarySolar").innerText = solarCost;
+            document.getElementById("totalCost").innerText = totalCost;
 
-    function chatWithp7() {
-        const totalCost = updateSummary();
+            return totalCost;
+        }
 
-        const constructionArea = document.getElementById("constructionArea").value;
-        const constructionPackage = document.getElementById("constructionPackage").options[document.getElementById("constructionPackage").selectedIndex].text;
-        const carParkingArea = document.getElementById("carParkingArea").value;
-        const undergroundSump = document.getElementById("undergroundSumpRange").value;
-        const wasteWaterTank = document.getElementById("wasteWaterTankRange").value;
-        const compoundWall = document.getElementById("compoundWall").value;
-        const solarPower = document.getElementById("solarPower").value;
+        // Function to handle WhatsApp message
+        function chatWithp7() {
+            const totalCost = updateSummary();
 
-        const message = `House Construction Enquiry:\n\nConstruction Area: ${constructionArea} sq.ft,\nPackage Selected: ${constructionPackage},\nCar Parking Area: ${carParkingArea} sq.ft,\nUnderground Sump: ${undergroundSump} litres,\nWaste Water Tank: ${wasteWaterTank} person,\nCompound Wall Length: ${compoundWall} feet,\nSolar Power: ${solarPower} units,\n\nTotal Estimated Cost: Rs. ${totalCost}`;
+            const constructionArea = constructionAreaElement.value;
+            const constructionPackage = constructionPackageElement.options[constructionPackageElement.selectedIndex].text;
+            const carParkingArea = carParkingAreaElement.value;
+            const undergroundSump = undergroundSumpElement.value;
+            const wasteWaterTank = wasteWaterTankElement.value;
+            const compoundWall = compoundWallElement.value;
+            const solarPower = solarPowerElement.value;
 
-        const whatsappUrl = `https://wa.me/919384404707?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-    }
+            const message = `House Construction Enquiry:\n\nConstruction Area: ${constructionArea} sq.ft,\nPackage Selected: ${constructionPackage},\nCar Parking Area: ${carParkingArea} sq.ft,\nUnderground Sump: ${undergroundSump} litres,\nWaste Water Tank: ${wasteWaterTank} person,\nCompound Wall Length: ${compoundWall} feet,\nSolar Power: ${solarPower} units,\n\nTotal Estimated Cost: Rs. ${totalCost}`;
 
-    // Add event listeners for all input elements
-    document.getElementById("constructionArea").addEventListener("input", updateSummary);
-    document.getElementById("constructionPackage").addEventListener("change", updateSummary);
-    document.getElementById("carParkingArea").addEventListener("input", updateSummary);
-    document.getElementById("undergroundSumpRange").addEventListener("input", function () {
-        document.getElementById("undergroundSumpSpan").innerText = this.value;
+            const whatsappUrl = `https://wa.me/919384404707?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Add event listeners for all input elements
+        constructionAreaElement.addEventListener("input", updateSummary);
+        constructionPackageElement.addEventListener("change", updateSummary);
+        carParkingAreaElement.addEventListener("input", updateSummary);
+        undergroundSumpElement.addEventListener("input", function () {
+            document.getElementById("undergroundSumpSpan").innerText = this.value;
+            updateSummary();
+        });
+        wasteWaterTankElement.addEventListener("input", function () {
+            document.getElementById("wasteWaterTankSpan").innerText = this.value;
+            updateSummary();
+        });
+        compoundWallElement.addEventListener("input", updateSummary);
+        solarPowerElement.addEventListener("input", updateSummary);
+
+        // Attach the event listener to the button
+        document.querySelector('.calculator-button').addEventListener('click', chatWithp7);
+
+        // Initialize the summary on page load
         updateSummary();
-    });
-    document.getElementById("wasteWaterTankRange").addEventListener("input", function () {
-        document.getElementById("wasteWaterTankSpan").innerText = this.value;
-        updateSummary();
-    });
-    document.getElementById("compoundWall").addEventListener("input", updateSummary);
-    document.getElementById("solarPower").addEventListener("input", updateSummary);
 
-    // Attach the event listener to the button
-    document.querySelector('.calculator-button').addEventListener('click', chatWithp7);
-
-    // Initialize the summary on page load
-    updateSummary();
+    } else {
+        console.error("One or more form elements are missing from the DOM.");
+    }
+},1000);
 });
