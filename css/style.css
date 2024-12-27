@@ -861,11 +861,13 @@ spaces
 }
 
 .mil-mb-30 {
+  text-align: justify;
   margin-bottom: 30px;
 }
 
 .mil-mb-60 {
   margin-bottom: 60px;
+  /* border: 2px solid red; */
 }
 
 .mil-mb-90 {
@@ -900,7 +902,10 @@ spaces
     padding-bottom: 90px;
   }
 }
-
+.mil-p-50-30{
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
 .mil-p-120-90 {
   padding-top: 120px;
   padding-bottom: 90px;
@@ -4310,12 +4315,40 @@ html.is-animating .mil-menu-frame {
   color: green;
   cursor: pointer;
 }
-.cmpnyMail{
-  cursor: pointer;
+/* footer mobile number */
+
+.phone-link {
+  
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; 
+  
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover effects */
 }
+
+.phone-link:hover {
+  color: #f37b35;
+}
+
+/* footer mobile number end  */
+
+/* footer mail id  */
+.cmpnyMail {
+  cursor: pointer;
+  font-size: 1rem; /* Adjust font size */
+  /* color: #333; Original text color */
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease; ; /* Smooth color transition */
+}
+
+.cmpnyMail:hover {
+  color: #f37b35; /* Change to blue on hover */
+}
+/* footer mail id end  */
+
  /* floating whatsapp */
  .floating-whatsapp {
   position: fixed;
+  cursor: pointer;
   bottom: 20px;
   right: 20px;
   z-index: 1000;
@@ -4449,6 +4482,10 @@ html.is-animating .mil-menu-frame {
   height: 100vh; /* Full viewport height */
 }
 
+.calc-pointer{
+  cursor: pointer;
+}
+
 .calculator-button {
   background: linear-gradient(135deg, #ff7300, #fae100);
   margin: auto;
@@ -4497,58 +4534,62 @@ html.is-animating .mil-menu-frame {
   }
 }
 
-/* .sec-spacing{
-  height: 600px;
-  overflow: scroll;
-} */
 
-.sec-spacing{
+/* General Styles */
+.sec-spacing {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
-  /* padding: 20px;  */
-  box-sizing: border-box; 
-  overflow: auto;
+  box-sizing: border-box;
 }
 
-.sec-span{
+.sec-span {
   color: #f9c940;
   font-size: 2.5rem;
 }
 
 h1.design {
   color: #333;
-  font-size: 2.5rem; /* Customize heading size */
-  margin-top: 30px;
-  margin-bottom: 10px; 
-
+  font-size: 2rem; /* Adjusted for scalability */
+  margin: 20px 0;
 }
 
 p.subtitle {
   color: #666;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.summary-text {
+  width: 80%;
+  color: #666;
   font-size: 1.2rem; /* Customize subtitle size */
-  margin-top: 0; /* Remove any default top margin */
-  margin-bottom: 100px;
-  
+  margin: 0 auto; /* Center the text */
+  text-align: justify; /* Horizontally center the text */
+  margin-bottom: 50px;
+  line-height: 1.5;
+  padding: 50px;
 }
 
 .timeline-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  padding: 0 20px;
-  /* border: 1px solid green; */
+  padding: 0 15px;
 }
 
 .timeline-container::after {
   content: "";
   position: absolute;
-  top: 25px; /* Adjust based on the height of the circle */
+  top: 30px;
   left: 0;
   right: 0;
   height: 2px;
@@ -4557,18 +4598,16 @@ p.subtitle {
 }
 
 .timeline-step {
-  /* flex: 1; */
-  /* border: 1px solid red; */
   text-align: center;
-  width: 250px;
-  /* position: relative; */
+  width: 200px; /* Adjust width for better scaling */
+  margin: 10px 0;
 }
 
 .circle {
   width: 50px;
   height: 50px;
-  background-color: #fff; /* Default: white */
-      color: #333; /* Default text color */  
+  background-color: #fff;
+  color: #333;
   font-size: 18px;
   font-weight: bold;
   border-radius: 50%;
@@ -4577,18 +4616,18 @@ p.subtitle {
   justify-content: center;
   margin: 0 auto 10px;
 }
+
 .circle.active {
-  background-color: #f9c940; /* Orange */
+  background-color: #f9c940;
   color: white;
 }
 
 .step-content {
   text-align: justify;
-  width: 120px;
-  font-size: 14px;
+  width: 80%;
+  font-size: 0.9rem; /* Adjusted for scalability */
   color: #555;
-  margin-top: 10px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .step-content.active {
@@ -4606,8 +4645,8 @@ p.subtitle {
 .timeline-step:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: 25px; /* Same as the top of the main line */
-  right: -50%; /* Half the width of the space between steps */
+  top: 30px; /* Same as the top of the main line */
+  right: 0; /* Half the width of the space between steps */
   width: 100%;
   height: 2px;
   background: #ddd;
@@ -4617,31 +4656,23 @@ p.subtitle {
 .timeline-step:last-child::after {
   content: none;
 }
-/* Responsive styles for tablets */
+
+/* Responsive Styles */
+
+/* For tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .timeline-container {
-    flex-wrap: wrap; /* Allow steps to wrap to the next line */
-    justify-content: center; /* Center the steps */
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .timeline-step {
     width: 45%; /* Adjust width for smaller screens */
-    margin-bottom: 30px; /* Add spacing between rows */
+    margin-bottom: 20px;
   }
 
   .timeline-container::after {
-    display: none; /* Hide the main timeline line */
-  }
-
-  .timeline-step:not(:last-child)::after {
-    display: none; /* Hide connecting lines between steps */
-  }
-}
-
-/* Responsive styles for mobile */
-@media (max-width: 480px) {
-  .timeline-step {
-    width: 100%; /* Full width for each step */
+    display: none; /* Hide the timeline line */
   }
 
   .circle {
@@ -4651,13 +4682,76 @@ p.subtitle {
   }
 
   .step-content {
-    font-size: 12px;
+    font-size: 0.8rem; /* Reduce font size */
   }
 
   p.subtitle {
-    font-size: 14px;
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  h1.design {
+    font-size: 1.8rem;
   }
 }
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .timeline-step {
+    width: 100%; /* Full width for each step */
+    margin-bottom: 20px;
+  }
+
+  .circle {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .step-content {
+    font-size: 0.7rem; /* Smaller text for smaller screens */
+  }
+
+  .summary-text {
+    width: 95%; /* Adjust width */
+    font-size: 0.9rem;
+  }
+}
+
+/* For larger desktops (min-width: 1400px) */
+@media (min-width: 1400px) {
+  .timeline-container {
+    max-width: 1600px; /* Extend max width for larger screens */
+  }
+
+  .timeline-step {
+    width: 18%; /* Adjust step width for larger screens */
+  }
+
+  .circle {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .step-content {
+    font-size: 1rem;
+  }
+
+  h1.design {
+    font-size: 3rem;
+  }
+
+  p.subtitle {
+    font-size: 1.5rem;
+  }
+}
+
 .extra-space{
   height: 90px;
+}
+
+/* service image */
+.service-img{
+  width: 300px;
 }
