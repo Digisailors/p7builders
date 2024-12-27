@@ -88,6 +88,11 @@
                                                           <li><a href="portfolio-3.html">Portfolio slider</a></li>
                                                       </ul> -->
                                   </li>
+
+                                  <li class="mil-has-children">
+                                    <a href="team.html#.">About Us</a>
+                                  </li>
+
                                   <li class="mil-has-children mil-active">
                                     <a href="portfolio-1.html">Portfolio</a>
                                     <!-- <ul>
@@ -115,14 +120,7 @@
                                     <a class="calc-pointer"  onclick="calculatorRedirect()">Cost Calculator</a>     
                                  </li>
 
-                                  <li class="mil-has-children">
-                                    <a href="team.html#.">About Us</a>
-                                    <!-- <ul>
-                                                          <li><a href="team.html">Team</a></li>
-                                                          <li><a href="contact.html">Contact</a></li>
-                                                          <li><a href="404.html">404</a></li>
-                                                      </ul> -->
-                                  </li>
+                                  
                                   <li class="mil-has-children">
                                     <a href="contact.html">Contact Us</a>
                                     <!-- <ul>
@@ -254,7 +252,7 @@
             <div class="mil-frame-bottom">
                 <div class="mil-current-page"></div>
                 <div class="mil-back-to-top">
-                    <a href="portfolio-1.html#top" class="mil-link mil-dark mil-arrow-place">
+                    <a href="#top" class="mil-link mil-dark mil-arrow-place">
                         <span>Back to top</span>
                     </a>
                 </div>
@@ -263,7 +261,7 @@
         <!-- frame end -->
 
         <!-- content -->
-        <div class="mil-content">
+        <div class="mil-content" id="top">
             <div id="swupMain" class="mil-main-transition">
 
                 <!-- banner -->
@@ -517,13 +515,14 @@
                             <span class="mil-no-wrap"></span>
                           </p>
                               </div>
-                              <div class="col-md-6 col-lg-5 mil-mb-60">
+                              <div class="col-md-6 col-lg-5 mil-mb-60" style="width: fit-content;">
                                 <h6 class="mil-muted mil-up mil-mb-30">Reach Us</h6>
         
-                                <p class="mil-light-soft mil-up"> 
-                                    Ph: +91 9384 404 707
-                                    <span class="mil-no-wrap cmpnyMail" onclick="gMail()">Mail: p7builder@gmail.com</span>
-                                </p>
+                                <p class="mil-light-soft mil-up phone-link"> 
+                                    Ph:
+                                    <a onclick="makeCall()"> +91 9384 404 707</a>
+                                  </p>
+                                  <p class="mil-light-soft mil-up cmpnyMail" onclick="gMail()">Mail: p7builder@gmail.com</p>
                               </div>
                             </div>
                           </div>
