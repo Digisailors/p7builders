@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css" />
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css" />
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css" />
+    <!-- fancybox css -->
+    <link rel="stylesheet" href="css/plugins/fancybox.min.css" />
+    <!-- index scss -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- page name -->
+    <title>P7</title>
+    <style>
+     
+      /* * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family: 'Oswald', sans-serif;
+      } */
+
+      @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+
+      .container {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      .main-title {
+          text-align: center;
+          margin-bottom: 40px;
+          font-family: 'Oswald', sans-serif;
+          text-transform: uppercase;
+      }
+
+      .main-title h1 {
+          font-size: 28px;
+          font-weight: 600;
+      }
+
+      .packages-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+      }
+
+      @media (max-width: 1200px) {
+          .packages-grid {
+              grid-template-columns: repeat(2, 1fr);
+          }
+      }
+
+      @media (max-width: 768px) {
+          .packages-grid {
+              grid-template-columns: 1fr;
+          }
+      }
+
+      .package-card {
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          overflow: hidden;
+      }
+
+      .package-header {
+          background-color: #f4d03f;
+          padding: 20px;
+          text-align: center;
+      }
+
+      .package-header h2 {
+          margin: 0;
+          color: #333;
+          font-size: 24px;
+          font-weight: 500;
+          text-transform: uppercase;
+      }
+
+      .package-price {
+          font-size: 32px;
+          font-weight: 600;
+          margin: 10px 0;
+      }
+
+      .package-price small {
+          font-size: 16px;
+          font-weight: 400;
+      }
+
+      .accordion-item {
+          border-bottom: 1px solid #eee;
+      }
+
+      .accordion-header {
+          padding: 15px;
+          background: #f9f9f9;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      .accordion-header h3 {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+      }
+
+      .plus-icon {
+          width: 20px;
+          height: 20px;
+          position: relative;
+          cursor: pointer;
+      }
+
+      .plus-icon::before,
+      .plus-icon::after {
+          content: '';
+          position: absolute;
+          background-color: #333;
+          transition: transform 0.3s ease;
+      }
+
+      .plus-icon::before {
+          width: 2px;
+          height: 20px;
+          left: 9px;
+          top: 0;
+      }
+
+      .plus-icon::after {
+          width: 20px;
+          height: 2px;
+          left: 0;
+          top: 9px;
+      }
+
+      .plus-icon.active::before {
+          transform: rotate(90deg);
+      }
+
+      .accordion-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-out;
+          background: white;
+      }
+
+      .accordion-content.active {
+          max-height: none;
+      }
+
+      .content-inner {
+          padding: 15px;
+      }
+
+      .accordion-content ul {
+          list-style: none;
+          margin: 0;
+      }
+
+      .accordion-content li {
+          margin-bottom: 10px;
+          line-height: 1.4;
+          font-size: 14px;
+          font-weight: 400;
+      }
+
+      .accordion-content li b {
+          font-weight: 500;
+      }
+
+      .accordion-content li:last-child {
+          margin-bottom: 0;
+      }
+
+      /* This ensures all active content sections have the same height */
+      .section-group {
+          display: none;
+      }
+
+      .section-group.active {
+          display: block;
+      }
+  </style>
+  </head>
+
+  <body>
+    <!-- wrapper -->
+    <div class="mil-wrapper" id="top">
+      <!-- cursor -->
+      <div class="mil-ball">
+        <span class="mil-icon-1">
+          <svg viewBox="0 0 128 128">
+            <path
+              d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2	c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2	L11.2,67h105.5l-14.9,14.9c-1.2,1.2-1.2,3.1,0,4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9	z"
+            />
+          </svg>
+        </span>
+        <div class="mil-more-text">More</div>
+        <div class="mil-choose-text">Сhoose</div>
+      </div>
+      <!-- cursor end -->
+
+      <!-- preloader -->
+      <!-- <div class="mil-preloader">
+            <div class="mil-preloader-animation">
+                <div class="mil-pos-abs mil-animation-1">
+                    <p class="mil-h3 mil-muted mil-thin">Extravagant By Design</p>
+                    <p class="mil-h3 mil-muted">Everlasting By Structure</p>
+                    <p class="mil-h3 mil-muted mil-thin">Exemplary By Trust</p>
+                </div>
+                <div class="mil-pos-abs mil-animation-2">
+                    <div class="mil-reveal-frame">
+                        <p class="mil-reveal-box"></p>
+                        <p class="mil-h3 mil-muted mil-thin">P7_Builders.com</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+      <!-- preloader end -->
+
+      <!-- scrollbar progress -->
+      <div class="mil-progress-track">
+        <div class="mil-progress"></div>
+      </div>
+      <!-- scrollbar progress end -->
+
+      <!-- menu -->
+      <div class="mil-menu-frame">
+        <!-- frame clone -->
+        <div class="mil-frame-top">
+          <a href="index.html" class="mil-logo">P7.</a>
+          <div class="mil-menu-btn">
+            <span></span>
+          </div>
+        </div>
+        <!-- frame clone end -->
+        <div class="container">
+          <div class="mil-menu-content">
+            <div class="row">
+              <div class="col-xl-5">
+                <nav class="mil-main-menu" id="swupMenu">
+                  <ul>
+                    <li class="mil-has-children">
+                      <a href="index.html#.">Homepage</a>
+                      <!-- <ul>
+                                                          <li><a href="index.html">Landing page</a></li>
+                                                          <li><a href="home-2.html">Personal</a></li>
+                                                          <li><a href="portfolio-3.html">Portfolio slider</a></li>
+                                                      </ul> -->
+                    </li>
+
+                    <li class="mil-has-children">
+                      <a href="team.html#.">About Us</a>
+                    </li>
+
+                    <li class="mil-has-children">
+                      <a href="portfolio-1.html">Portfolio</a>
+                      <!-- <ul>
+                                                          <li><a href="portfolio-1.html">Grid type 1</a></li>
+                                                          <li><a href="portfolio-2.html">Grid type 2</a></li>
+                                                          <li><a href="portfolio-3.html">Slider</a></li>
+                                                      </ul> -->
+                    </li>
+                    <li class="mil-has-children">
+                      <a href="services.html">Services</a>
+                      <!-- <ul>
+                                                          <li><a href="services.html">Services List</a></li>
+                                                          <li><a href="service.html">Single service</a></li>
+                                                      </ul> -->
+                    </li>
+                    <li class="mil-has-children">
+                      <a href="blog-inner.html">Projects</a>
+                      <!-- <ul>
+                                                          <li><a href="blog.html">Blog List</a></li>
+                                                          <li><a href="publication.html">Publication</a></li>
+                                                      </ul> -->
+                    </li>
+
+                    <li class="mil-has-children mil-active">
+                      <a  class="calc-pointer"  href="package.html">Packages</a>
+                    </li>
+
+                    <li class="mil-has-children">
+                      <a  class="calc-pointer"  onclick="calculatorRedirect()">Cost Calculator</a>
+                    </li>
+
+                    
+
+                    <li class="mil-has-children">
+                      <a href="contact.html">Contact Us</a>
+                      <!-- <ul>
+                                                          <li><a href="team.html">Team</a></li>
+                                                          <li><a href="contact.html">Contact</a></li>
+                                                          <li><a href="404.html">404</a></li>
+                                                      </ul> -->
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-xl-7">
+                <div class="mil-menu-right-frame">
+                  <div class="mil-animation-in">
+                    <div class="mil-animation-frame">
+                      <div
+                        class="mil-animation mil-position-1 mil-scale"
+                        data-value-1="2"
+                        data-value-2="2"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mil-menu-right">
+                    <div class="row">
+                      <div class="col-lg-8 mil-mb-60">
+                        <h6 class="mil-muted mil-mb-30">Projects</h6>
+
+                        <ul class="mil-menu-list">
+                          <li>
+                            <a
+                              href="blog-inner.html#pro1"
+                              class="mil-light-soft"
+                              >Project for Mr.Vimal</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="blog-inner.html#pro2"
+                              class="mil-light-soft"
+                              >House of Courtyard</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="blog-inner.html#pro3"
+                              class="mil-light-soft"
+                              >Project for Mr.Kottaisamy</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="blog-inner.html#pro4"
+                              class="mil-light-soft"
+                              >Project for Mr.Muneeshwaran</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="blog-inner.html#pro5"
+                              class="mil-light-soft"
+                              >Project for Mr.Anbu</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="blog-inner.html#pro6"
+                              class="mil-light-soft"
+                              >Project for Mr.Vimal Raj</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-lg-4 mil-mb-60">
+                        <h6 class="mil-muted mil-mb-30">Useful links</h6>
+
+                        <ul class="mil-menu-list">
+                          <li>
+                            <a href="index.html#." class="mil-light-soft"
+                              >Privacy Policy</a
+                            >
+                          </li>
+                          <li>
+                            <a href="index.html#." class="mil-light-soft"
+                              >Terms and conditions</a
+                            >
+                          </li>
+                          <li>
+                            <a href="index.html#." class="mil-light-soft"
+                              >Cookie Policy</a
+                            >
+                          </li>
+                          <li>
+                            <a href="index.html#." class="mil-light-soft"
+                              >Careers</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mil-divider mil-mb-60"></div>
+                    <div class="row justify-content-between">
+                      <!-- <div class="col-lg-4 mil-mb-60">
+                                            <h6 class="mil-muted mil-mb-30">Canada</h6>
+                    
+                                            <p class="mil-light-soft mil-up">
+                                              71 South Los Carneros Road, California
+                                              <span class="mil-no-wrap">+51 174 705 812</span>
+                                            </p>
+                                          </div> -->
+                      <div class="col-lg-4 mil-mb-60">
+                        <h6 class="mil-muted mil-mb-30">India</h6>
+
+                        <p class="mil-light-soft">
+                          4a/135 SMT Housing Board , State Bank Colony,
+                          Tuticorin, Tamilnadu – 628002
+                          <span class="mil-no-wrap">+91 9384 404 707</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- menu -->
+
+      <!-- curtain -->
+      <div class="mil-curtain"></div>
+      <!-- curtain end -->
+
+      <!-- frame -->
+      <div class="mil-frame">
+        <div class="mil-frame-top">
+          <a href="index.html" class="mil-logo">P7.</a>
+          <div class="mil-menu-btn">
+            <span></span>
+          </div>
+        </div>
+        <div class="mil-frame-bottom">
+          <div class="mil-current-page"></div>
+          <div class="mil-back-to-top">
+            <a
+              href="#top"
+              class="mil-link mil-dark mil-arrow-place"
+            >
+              <span>Back to top</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- frame end -->
+
+      <!-- content -->
+      <div class="mil-content" id="top">
+        <div id="swupMain" class="mil-main-transition">
+          <!-- banner -->
+          <div class="mil-inner-banner mil-p-0-120">
+            <div class="mil-banner-content mil-center mil-up">
+              <div class="container">
+                <ul class="mil-breadcrumbs mil-center mil-mb-60">
+                  <li><a href="index.html">Homepage</a></li>
+                  <li><a href="services.html">Package & Cost Calculator</a></li>
+                </ul>
+                <h1 class="mil-mb-60">Get in touch!</h1>
+                <a
+                  href="#calc-section"
+                  class="mil-link mil-dark mil-arrow-place mil-down-arrow"
+                >
+                  <span>About service</span>
+                  <div class="extra-space"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- banner end -->
+
+          <!-- packages start  -->
+        
+         
+          <section class="sec-spacing" id="calc-section">
+            <div class="container">
+                <div class="main-title">
+                    <h1>Our Home Construction Packages</h1>
+                </div>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h2>BASIC PACKAGE</h2>
+                            <div class="package-price">₹ 2099 <small>per sqft</small></div>
+                        </div>
+                        <div class="accordion">
+
+                          <div class="accordion-item" data-section="design">
+                            <div class="accordion-header" onclick="toggleSection('design')">
+                                <h3>Design</h3>
+                                <span class="plus-icon"></span>
+                            </div>
+                            <div class="accordion-content">
+                    
+                              <div class="content-inner">
+
+                                <ul>
+                                  <li>SCHEME DRAWING : ALL FLOORS (2D)</li>
+                                  <li>ELEVATION DESIGN : (3D)</li>
+                                  <li>HALF LAYOUT : ALL FLOORS (3D)</li>
+                                  <li>ELECTRICAL DRAWINGS : ALL FLOORS (2D)</li>
+                                  <li>PLUMBING DRAWING : ALL FLOORS (2D)</li>
+                                  <li>WORKING DRAWING : ALL FLOORS (2D)</li>
+                                </ul>
+                                </div>
+                              
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-section="structure">
+                          <div class="accordion-header" onclick="toggleSection('structure')">
+                              <h3>Structure</h3>
+                              <span class="plus-icon"></span>
+                          </div>
+                                <div class="accordion-content">
+                                  <div class="content-inner">
+                                    <ul>
+                                        <li><b>Basement Height :</b> Upto 3 feet</li>
+                                        <li><b>Steel :</b> JSW / AISHWARYAM </li>
+                                        <li><b>Chamber Bricks :</b> For Partition walls. 9-Inch Thick Exterior Walls | 4 Inch Thick Inner Walls</li>
+                                        <li><b>Cement :</b> Ramco / Dalmia</li>
+                                        <li><b>M Sand :</b>  <!-- Standard Package --> Blockwork & All Masonry Works</li>
+                                        <li><b>P Sand :</b> Plastering Works</li>
+                                        <li><b>Concrete Grade :</b> M20 | RMC for Roof</li>
+                                        <li><b>Ceiling Height :</b> 10.5 Feet</li>
+                                        <li><b>Steel Reinforcement :</b> As per Standard</li>
+                                        <li><b>Parapet Wall :</b>3'6 Feet Height | 9" Thick </li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" data-section="bathroom">
+                              <div class="accordion-header" onclick="toggleSection('bathroom')">
+                                  <h3>Bathroom & Plumbing</h3>
+                                  <span class="plus-icon"></span>
+                              </div>
+                                <div class="accordion-content">
+                                  <div class="content-inner">
+                                    <ul>
+                                        <li><b>Wall Tiles :</b> Upto Ceiling (Full Height). Size 2'X2' Vitrified Tile. Upto ₹50/Sqft. 1 Colour for 2 Bathrooms</li>
+                                        <li><b>Bath & CP Fittings :</b> Jaquar | Upto ₹17000 Per Bathroom | Floor Mounted EWC, Wall Mounted Wash Basin, Pillar Tap, Health Faucet, Shower Set, 2-in-1 Wall Mixer.</li>
+                                        <li><b>Plumbing Pipes & Fittings :</b> Inner CPVC, Outer PVC. Brands: Finolex</li>
+                                        <li><b>Overhead Tank :</b> 1000 litres Sintex | 3 Layered | UV Protected | White Colour</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" data-section="flooring">
+                              <div class="accordion-header" onclick="toggleSection('flooring')">
+                                  <h3>Flooring</h3>
+                                  <span class="plus-icon"></span>
+                              </div>
+                                <div class="accordion-content">
+                                  <div class="content-inner">
+                                    <ul>
+                                        <li><b>Living, Dining, Bedrooms & Kitchen :</b> 4'X2' | Vitrified Tiles Upto ₹65/Sqft. 1 Model for Living, Dining and Kitchen. KAG / Sunheart or Equivalent</li>
+                                        <li><b>Balcony & Utility :</b> Size 2'X2' | Upto 50/Sqft | Antiskid</li>
+                                        <li><b>Staircase :</b> Full Body Tile : Upto ₹110/sqft</li>
+                                        <li><b>Car Parking :</b> 1'X1' Heavy Duty Tile | Upto ₹50/Sqft</li>
+                                        <li><b>Terrace Flooring :</b> Weathering course with traditional red tiles</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" data-section="kitchen">
+                              <div class="accordion-header" onclick="toggleSection('kitchen')">
+                                  <h3>Kitchen & Dining</h3>
+                                  <span class="plus-icon"></span>
+                              </div>
+                                <div class="accordion-content">
+                                  <div class="content-inner">
+                                    <ul>
+                                        <li><b>Wall Tile :</b> Vitrified Tile (2'X2') | Upto ₹55/Sqft</li>
+                                        <li><b>Sink Faucet :</b> Upto ₹2000 / No</li>
+                                        <li><b>Kitchen Sink :</b> Stainless Steel sink with Drain Upto ₹4000</li>
+                                        <li><b>Dining :</b> Wall Mounted Wash Basin</li>
+                                        <li><b>Kitchen Granite Top :</b> Upto ₹140/Sqft</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" data-section="door">
+                              <div class="accordion-header" onclick="toggleSection('door')">
+                                  <h3>Door, Windows & Railing</h3>
+                                  <span class="plus-icon"></span>
+                              </div>
+                                <div class="accordion-content">
+                                  <div class="content-inner">
+                                    <ul>
+                                        <ul>
+                                            <li><b>Main Door :</b> Vengai or Ghana Teak Door & Teak Frame | 35mm Thickness | 5"X3" Thick Frame | 8' Height 4 Feet Width.</li>
+                                            <li><b>Room Doors :</b> Flush Door| Sal Wood Frame | 7'X3'</li>
+                                            <li><b>Bathroom Door :</b> WPC Door & Frame | 7'X2.5'</li>
+                                            <li><b>Windows :</b> UPVC Sliding White - No Restriction on Size and Quantity | 5mm Clear Glass</li>
+                                            <li><b>Staircase Railing :</b> SS 304 Grade Railing</li>
+                                            <li><b>Balcony Railing :</b> SS 304 Grade Railing with 8mm Toughened Glass with Posts</li>
+                                        </ul>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" data-section="painting">
+                              <div class="accordion-header" onclick="toggleSection('painting')">
+                                  <h3>Painting</h3>
+                                  <span class="plus-icon"></span>
+                              </div>
+                                <div class="accordion-content">
+                                  <div class="content-inner">
+                                    <ul>
+                                        <li><b>Inner Wall Putty :</b> 2 coats of Wall Putty | Nippon</li>
+                                        <li><b>Wall Painting :</b> 1 coat of Primer | 2 coats of Satin glo plus emulsion | Nippon</li>
+                                        <li><b>Ceiling Painting :</b> 1 coat of Primer | 2 coats of Satin glo plus emulsion | Nippon</li>
+                                        <li><b>Exterior Paint :</b> 1 coat of Primer | 2 Coats of Weather bond | Nippon</li>
+                                        <li><b>Elevation Putty :</b> 2 Coat of Putty for Front Elevation | Nippon Exterior Putty</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" data-section="electrical">
+                              <div class="accordion-header" onclick="toggleSection('electrical')">
+                                  <h3>Electrical</h3>
+                                  <span class="plus-icon"></span>
+                              </div>
+                                <div class="accordion-content">
+                                  <div class="content-inner">
+                                    <ul>
+                                        <li>Wires - Kundan </li>
+                                        <li>Switches - Legrand</li>
+                                        <li>No Restriction on Number of Points. Except for Lifts, DG, Curtain Motors, Swimming Pool, Ro Plant, Pressure Pump, Intercom, Surveillance System, Exterior Light Points, Gate Automation, lightening arrester, Hybrid Solar Heater, Water Fountain, HVAC Systems.</li>
+                                        
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" data-section="removed">
+                              <div class="accordion-header" onclick="toggleSection('removed')">
+                                  <h3>What's not included</h3>
+                                  <span class="plus-icon"></span>
+                              </div>
+                                <div class="accordion-content">
+                                  <div class="content-inner">
+                                    <ul>
+                                        <li>Compound Wall @ 425/Sqtft & Gate (7 feet hight incluning foundation)</li>
+                                        <li>Sump & Septic Tank @ 28/Litre</li>
+                                        <li>Lift, Lift Pit and Shaft</li>
+                                        <li>Electricity Connection</li>
+                                        <li>Building Plan Approval, Water</li>
+                                        <li>Elevation Special Materials</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add other sections similarly -->
+                        </div>
+                    </div>
+
+                    <div class="package-card">
+                      <div class="package-header">
+                          <h2>standard Package</h2>
+                          <div class="package-price">₹ 2199 <small>per sqft</small></div>
+                      </div>
+                      <div class="accordion">
+
+                        <div class="accordion-item" data-section="design">
+                          <div class="accordion-header" onclick="toggleSection('design')">
+                              <h3>Design</h3>
+                              <span class="plus-icon"></span>
+                          </div>
+                          <div class="accordion-content">
+                            <div class="content-inner">
+                            
+
+                              <ul>
+                                <li>SCHEME DRAWING : ALL FLOORS (2D)</li>
+                                <li>ELEVATION DESIGN : (3D)</li>
+                                <li>HALF LAYOUT : ALL FLOORS (3D)</li>
+                                <li>ELECTRICAL DRAWINGS : ALL FLOORS (2D)</li>
+                                <li>PLUMBING DRAWING : ALL FLOORS (2D)</li>
+                                <li>WORKING DRAWING : ALL FLOORS (2D)</li>
+                                <li>SOIL TEST REPORT</li>
+                                <li>STRUCTURAL DRAWINGS</li>
+                                <li>FURNITURE LAYOUT : ALL FLOORS (2D)</li>
+                                <li>ELEVATION DETAIL DRAWING : (2D)</li>
+                              </ul>
+                              </div>
+                            
+                          </div>
+                      </div>
+
+                      <div class="accordion-item" data-section="structure">
+                        <div class="accordion-header" onclick="toggleSection('structure')">
+                            <h3>Structure</h3>
+                            <span class="plus-icon"></span>
+                        </div>
+                              <div class="accordion-content">
+                                <div class="content-inner">
+                                <ul>
+                                  <li><b>Basement Height :</b> Upto 4.5 feet</li>
+                                  <li><b>Steel :</b> JSW / AISHWARYAM</li>
+                                  <li><b>Wire-Cut Bricks :</b> For Partition walls. 9-Inch Thick Exterior Walls | 4 Inch Thick Inner Walls</li>
+                                  <li><b>Cement :</b> Ramco / Ultratech</li>
+                                  <li><b>M Sand :</b> Blockwork & All Masonry Works</li>
+                                  <li><b>River Sand :</b> Plastering Works</li>
+                                  <li><b>Concrete Grade :</b> M20 | RMC for Roof</li>
+                                  <li><b>Ceiling Height :</b> 11 Feet (FFL to FFL)</li>
+                                  <li><b>Steel Reinforcement :</b> As per FRM Builders Structural Detailing.</li>
+                                  <li><b>Parapet Wall :</b> 3.5' Feet Height | 9" Thick</li>
+                                  <li><b>RCC Lift Pit :</b> Included (If Required)</li>
+                                  <li><b>Lift Pit & Shaft :</b> Included (If Required)</li>
+                              </ul>
+                              </div>
+                              </div>
+                          </div>
+
+                          <div class="accordion-item" data-section="bathroom">
+                            <div class="accordion-header" onclick="toggleSection('bathroom')">
+                                <h3>Bathroom & Plumbing</h3>
+                                <span class="plus-icon"></span>
+                            </div>
+                              <div class="accordion-content">
+                                <div class="content-inner">
+                                <ul>
+                                  <li><b>Wall Tiles :</b> Upto Ceiling (Full Height). 4'X2' Digital Vitrified Tile. Upto ₹85/Sqft</li>
+                                  <li><b>Bath & CP Fittings :</b> Jaquar | Upto ₹17000 Per Bathroom | Floor Mounted EWC, Wall Mounted Wash Basin, Pillar Tap, Health Faucet, Shower Set, 2-in-1 Wall Mixer.</li>
+                                  <li><b>Plumbing Pipes & Fittings :</b> Inner CPVC, Outer PVC. Brands: Ashirwad / Finolex</li>
+                                  <li><b>Overhead Tank :</b> 3000 litres Sintex | 5 Layered | UV Protected | White Colour. With Sensor</li>
+                                  <li><b>Solar Heater Plumbing Lines :</b> Included (If Required)</li>
+                              </ul>
+                              </div>
+                              </div>
+                          </div>
+
+                          <div class="accordion-item" data-section="flooring">
+                            <div class="accordion-header" onclick="toggleSection('flooring')">
+                                <h3>Flooring</h3>
+                                <span class="plus-icon"></span>
+                            </div>
+                              <div class="accordion-content">
+                                <div class="content-inner">
+                                <ul>
+                                  <li><b>Living, Dining, Bedrooms & Kitchen :</b>4'X2' | Tiles Upto ₹80/Sqft. Somany / Kajaria / KAG / Sunheart or Equivalent</li>
+                                  <li><b>Balcony & Utility :</b> Size 2'X2' | Upto 60/Sqft</li>
+                                  <li><b>Staircase :</b> Granite Upto ₹160/sqft</li>
+                                  <li><b>Car Parking :</b> 2'X2' Heavy Stone| Upto ₹80/Sqft</li>
+                                  <li><b>Terrace Flooring :</b> White Cooling Tile Size 1'X1' | Anuj | with Waterproofing</li>
+                              </ul>
+                              </div>
+                              </div>
+                          </div>
+
+                          <div class="accordion-item" data-section="kitchen">
+                            <div class="accordion-header" onclick="toggleSection('kitchen')">
+                                <h3>Kitchen & Dining</h3>
+                                <span class="plus-icon"></span>
+                            </div>
+                              <div class="accordion-content">
+                                <div class="content-inner">
+                                <ul>
+                                  <li><b>Wall Tile :</b> Vitrified Tile (4'X2') | Upto ₹65/Sqft</li>
+                                  <li><b>Sink Faucet :</b> Designer Brand | Upto ₹3500 /nos</li>
+                                  <li><b>Kitchen Sink :</b> Quartz Sink with Drain Upto ₹5000</li>
+                                  <li><b>Dining :</b> Wash Basin with Granite Counter</li>
+                                  <li><b>Kitchen Granite Top :</b> Upto ₹160/Sqft</li>
+                              </ul>
+                              </div>
+                              </div>
+                          </div>
+
+                          <div class="accordion-item" data-section="door">
+                            <div class="accordion-header" onclick="toggleSection('door')">
+                                <h3>Door, Windows & Railing</h3>
+                                <span class="plus-icon"></span>
+                            </div>
+                              <div class="accordion-content">
+                                <div class="content-inner">
+                                  <ul>
+                                    <ul>
+                                      <li><b>Main Door :</b> Vengai or Ghana Teak Door & Teak Frame | 35mm Thickness | 5"X3" Thick Frame | 8' Height 4 Feet Width.</li>
+                                      <li><b>Room Doors :</b>  Flush Door with Laminate | Ghana Wood Frame | 7'X3'</li>
+                                      <li><b>Bathroom Door :</b> WPC Door & Frame | 7'X2.5'</li>
+                                      <li><b>Windows :</b>  UPVC Sliding White - No Restriction on Size and Quantity | 5mm Clear Glass</li>
+                                      <li><b>Staircase Railing :</b> SS 304 Grade Railing</li>
+                                      <li><b>Balcony Railing :</b> 10mm Full Toughened Glass with 304 Grade Railing.</li>
+                                  </ul>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="accordion-item" data-section="painting">
+                            <div class="accordion-header" onclick="toggleSection('painting')">
+                                <h3>Painting</h3>
+                                <span class="plus-icon"></span>
+                            </div>
+                              <div class="accordion-content">
+                                <div class="content-inner">
+                                <ul>
+                                  <li><b>Inner Wall Putty :</b> 2 coats of Wall Putty | Birla</li>
+                                  <li><b>Wall Painting :</b> 1 coat of Primer | 2 coats of Satin glo plus Emulsion | Nippon</li>
+                                  <li><b>Ceiling Painting :</b> 1 coat of Primer | 2 coats of Satin glo plus Emulsion | Nippon</li>
+                                  <li><b>Exterior Paint :</b> 1 coat of Primer | 2 Coats of Weather bond PRO from Nippon</li>
+                                  <li><b>Elevation Putty :</b>2 Coat of Putty for Two sides of Elevation | Nippon Exterior Putty</li>
+                              </ul>
+                              </div>
+                              </div>
+                          </div>
+
+                          <div class="accordion-item" data-section="electrical">
+                            <div class="accordion-header" onclick="toggleSection('electrical')">
+                                <h3>Electrical</h3>
+                                <span class="plus-icon"></span>
+                            </div>
+                              <div class="accordion-content">
+                                <div class="content-inner">
+                                <ul>
+                                  <li>Wires – Finolex / Havells (FRLS)</li>
+                                  <li>Switches – GM</li>
+                                  <li>No Restriction on Number of Points. Except for Lifts, DG, Curtain Motors, Swimming Pool, Ro Plant, Pressure Pump, Intercom, Surveillance System, Exterior Light Points, Gate Automation, lightening arrester, Hybrid Solar Heater, Water Fountain, HVAC Systems.</li>
+                                  <li>Electricity Panel Board - Single Service with RLCB - Exterior Grade</li>
+                              </ul>
+                              </div>
+                              </div>
+                          </div>
+
+                          <div class="accordion-item" data-section="removed">
+                            <div class="accordion-header" onclick="toggleSection('removed')">
+                                <h3>What's not included</h3>
+                                <span class="plus-icon"></span>
+                            </div>
+                              <div class="accordion-content">
+                                <div class="content-inner">
+                                <ul>
+                                  <li>Compound Wall @ 425/Sqtft & Gate(7 feet hight incluning foundation)</li>
+                                  <li>Sump & Septic Tank @ 24/Litre</li>
+                                  <li>Lift</li>
+                                  <li>Electricity Connection</li>
+                                  <li>Building Plan Approval, Water</li>
+                                  <li>Elevation Special Materials</li>
+                              </ul>
+                              </div>
+                              </div>
+                          </div>
+                          <!-- Add other sections similarly -->
+                      </div>
+                  </div>
+
+                  
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h2>Premium PACKAGE</h2>
+                            <div class="package-price">₹ 2299 <small>per sqft</small></div>
+                        </div>                  
+                    <div class="accordion">
+
+                      <div class="accordion-item" data-section="design">
+                        <div class="accordion-header" onclick="toggleSection('design')">
+                            <h3>Design</h3>
+                            <span class="plus-icon"></span>
+                        </div>
+                        <div class="accordion-content">
+                          <div class="content-inner">
+                          
+
+                            <ul>
+                              <li>SCHEME DRAWING : ALL FLOORS (2D)</li>
+                              <li>ELEVATION DESIGN : (3D)</li>
+                              <li>HALF LAYOUT : ALL FLOORS (3D)</li>
+                              <li>ELECTRICAL DRAWINGS : ALL FLOORS (2D)</li>
+                              <li>PLUMBING DRAWING : ALL FLOORS (2D)</li>
+                              <li>WORKING DRAWING : ALL FLOORS (2D)</li>
+                              <li>SOIL TEST REPORT</li>
+                              <li>STRUCTURAL DRAWINGS</li>
+                              <li>FURNITURE LAYOUT : ALL FLOORS (2D)</li>
+                              <li>ELEVATION DETAIL DRAWING : (2D)</li>
+                              <li>SITE ASSESSMENT & SITE PLAN</li>
+                              <li>INTERIOR VIEWS : ALL FLOORS (3D)</li>
+                              <li>INTERIOR DETAILING : ALL ROOMS (2D)</li>
+                              <li>INTERIOR 3D WALK-THROUGH</li>
+                              <li>APPROVAL DRAWING</li>
+                              <li>LANDSCAPING ARCHITECTURAL DESIGNS</li>
+                            </ul>
+                            </div>
+                          
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" data-section="structure">
+                      <div class="accordion-header" onclick="toggleSection('structure')">
+                          <h3>Structure</h3>
+                          <span class="plus-icon"></span>
+                      </div>
+                            <div class="accordion-content">
+                              <div class="content-inner">
+                              <ul>
+                                <li><b>Basement Height :</b> Upto 5 feet</li>
+                                <li><b>Steel :</b> TATA Steel</li>
+                                <li><b>Wire-Cut Bricks :</b> For Partition walls. 9-Inch Thick Exterior Walls | 4 Inch Thick Inner Walls</li>
+                                <li><b>Cement :</b>  Ramco / Dalmia / Ultratech</li>
+                                <li><b>River Sand :</b> Blockwork & All Masonry Works</li>
+                                <li><b>River Sand :</b> Plastering Works</li>
+                                <li><b>Concrete Grade :</b> M25 | RMC for Roof</li>
+                                <li><b>Ceiling Height :</b> 11 Feet (FFL to FFL)</li>
+                                <li><b>Steel Reinforcement :</b> 1.5times Strength all as per FRM Builders Structural Drawings and Detailing by FRM Builders Structural Engineer.</li>
+                                <li><b>Parapet Wall :</b>3.5' Feet Height | 9" Thick (Or) Toughened Glass Railing if Required.</li>
+                                <li><b>RCC Lift Pit :</b> Included (If Required)</li>
+                                <li>RCC Concrete Slab for Base</li>
+                                <li><b>Lift Pit & Shaft :</b> Included (If Required)</li>
+                            </ul>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-section="bathroom">
+                          <div class="accordion-header" onclick="toggleSection('bathroom')">
+                              <h3>Bathroom & Plumbing</h3>
+                              <span class="plus-icon"></span>
+                          </div>
+                            <div class="accordion-content">
+                              <div class="content-inner">
+                              <ul>
+                                <li><b>Wall Tiles :</b> Upto Ceiling (Full Height). 4'X2' Vitrified Tile. Upto ₹120/Sqft</li>
+                                <li><b>Bath & CP Fittings :</b> Kohler | Upto ₹50000 Per Bathroom | Concealed EWC, Counter Top Wash Basin, Marble Counter Slab, Pillar Tap, Health Faucet, Shower Set, Concealed Wall Mixer.</li>
+                                <li><b>Plumbing Pipes & Fittings :</b> Inner CPVC, Outer PVC. HDPE flexible pipe. Brands: Ashirwad / Finolex / Jindal</li>
+                                <li><b>RCC Overhead Tank :</b> Upto 6000 litres with Waterproofing.</li>
+                                <li><b>Solar Heater Plumbing Lines :</b> Included (If Required)</li>
+                            </ul>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-section="flooring">
+                          <div class="accordion-header" onclick="toggleSection('flooring')">
+                              <h3>Flooring</h3>
+                              <span class="plus-icon"></span>
+                          </div>
+                            <div class="accordion-content">
+                              <div class="content-inner">
+                              <ul>
+                                <li><b>Living, Dining, Bedrooms & Kitchen :</b> 6'X6' | Quarts Tiles Upto ₹200/Sqft</li>
+                                <li><b>Balcony & Utility :</b> Size 2'X2' | Upto 60/Sqft</li>
+                                <li><b>Staircase :</b> Marble Upto ₹350/sqft</li>
+                                <li><b>Car Parking :</b> Granite| Upto ₹120/Sqft</li>
+                                <li><b>Terrace Flooring :</b> 2'X2' Exterior Grade Vitrified Tile. (Any Grade) | with Waterproofing</li>
+                            </ul>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-section="kitchen">
+                          <div class="accordion-header" onclick="toggleSection('kitchen')">
+                              <h3>Kitchen & Dining</h3>
+                              <span class="plus-icon"></span>
+                          </div>
+                            <div class="accordion-content">
+                              <div class="content-inner">
+                              <ul>
+                                <li><b>Wall Tile :</b> Vitrified Designer Tile (4'X2') | Upto ₹125/Sqft</li>
+                                <li><b>Sink Faucet :</b> Floor Mounter Pull-Out | Upto ₹8000 / No</li>
+                                <li><b>Kitchen Sink :</b> Multifunction Sink Upto ₹15000</li>
+                                <li><b>Dining :</b> Premium Designer Collection Wash Basin with Marble Counter and Designer Tap.</li>
+                                <li><b>Kitchen Top :</b> Quarts Stone Upto ₹350/Sqft</li>
+                            </ul>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-section="door">
+                          <div class="accordion-header" onclick="toggleSection('door')">
+                              <h3>Door, Windows & Railing</h3>
+                              <span class="plus-icon"></span>
+                          </div>
+                            <div class="accordion-content">
+                              <div class="content-inner">
+                                <ul>
+                                  <ul>
+                                    <li><b>Main Door :</b> Designer Wood Door of Height upto 18 Feet X 5Feet (or) Security Steel Door of Size (8'X4.5') Pure Stainless Steel with Digital Lock.</li>
+                                    <li><b>Room Doors :</b> Flush Door with Laminate | Ghana Wood Frame | 8'X3.5'</li>
+                                    <li>Water Proof Flush Door with Designer Laminates | 8'X3'</li>
+                                    <li><b>Windows :</b> Openable Type | UPVC Coloured | No Restriction on Size and Quantity | Toughened Glass</li>
+                                    <li><b>Staircase Railing :</b> Toughened Glass with SS or Wood Railing or Aluminium</li>
+                                    <li><b>Balcony Railing :</b> 10mm Full Toughened Glass with Aluminium Railing.</li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-section="painting">
+                          <div class="accordion-header" onclick="toggleSection('painting')">
+                              <h3>Painting</h3>
+                              <span class="plus-icon"></span>
+                          </div>
+                            <div class="accordion-content">
+                              <div class="content-inner">
+                              <ul>
+                                <li><b>Inner Wall Putty :</b> 2 coats of Wall Putty | Birla</li>
+                                <li><b>Wall Painting :</b> 1 coat of Primer | 2 coats of Royal Shyne | Asian</li>
+                                <li><b>Ceiling Painting :</b> 1 coat of Primer | 2 coats of Royal Shyne | Nippon</li>
+                                <li><b>Exterior Paint :</b> 1 coat of Primer | 2 Coats of Apex Ultima ProteK | Asian</li>
+                                <li><b>Elevation Putty :</b> 2 Coat of Putty for All sides of Elevation | Birla Wallseal Waterproofing</li>
+                            </ul>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-section="electrical">
+                          <div class="accordion-header" onclick="toggleSection('electrical')">
+                              <h3>Electrical</h3>
+                              <span class="plus-icon"></span>
+                          </div>
+                            <div class="accordion-content">
+                              <div class="content-inner">
+                              <ul>
+                                <li>Wires – Finolex / Havells (FRLS)</li>
+                                <li>Switches – Touch Switches with Glass Plates.</li>
+                                <li>No Restriction on Number of Points. Required power points will be provided for Lifts, DG, Curtain Motors, Swimming Pool, Ro Plant, Pressure Pump, Intercom, Surveillance System, Exterior Light Points, Gate Automation, lightening arrester, Hybrid Solar Heater, Water Fountain, HVAC Systems.</li>
+                                <li>Electricity Panel Board - Upto 2 Service Connection with RLCB Exterior Grade</li>
+                            </ul>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" data-section="removed">
+                          <div class="accordion-header" onclick="toggleSection('removed')">
+                              <h3>What's not included</h3>
+                              <span class="plus-icon"></span>
+                          </div>
+                            <div class="accordion-content">
+                              <div class="content-inner">
+                              <ul>
+                                    <li>Compound Wall @ 425/Sqtft & Gate(7 feet hight incluning foundation)</li>
+                                    <li>Sump & Septic Tank @ 24/Litre</li>
+                                    <li>Lift</li>
+                                    <li>Electricity Connection</li>
+                                    <li>Building Plan Approval, Water</li>
+                                    <li>Elevation Special Materials</li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add other sections similarly -->
+                    </div>
+                </div>
+
+                <div class="package-card" style="border: 4px solid red;">
+                  <div class="package-header">
+                      <h2>Ultra premium</h2>
+                      <div class="package-price">₹ 2899 <small>per sqft</small></div>
+                  </div>
+                  <div class="accordion">
+
+                    <div class="accordion-item" data-section="design">
+                      <div class="accordion-header" onclick="toggleSection('design')">
+                          <h3>Design</h3>
+                          <span class="plus-icon"></span>
+                      </div>
+                      <div class="accordion-content">
+                        <div class="content-inner">
+                        
+                          <ul>
+                            <li>SCHEME DRAWING : ALL FLOORS (2D)</li>
+                            <li>ELEVATION DESIGN : (3D)</li>
+                            <li>HALF LAYOUT : ALL FLOORS (3D)</li>
+                            <li>ELECTRICAL DRAWINGS : ALL FLOORS (2D)</li>
+                            <li>PLUMBING DRAWING : ALL FLOORS (2D)</li>
+                            <li>WORKING DRAWING : ALL FLOORS (2D)</li>
+                          </ul>
+                          </div>
+                        
+                        </div>
+                  </div>
+
+                  <div class="accordion-item" data-section="structure">
+                    <div class="accordion-header" onclick="toggleSection('structure')">
+                        <h3>Structure</h3>
+                        <span class="plus-icon"></span>
+                    </div>
+                          <div class="accordion-content">
+                            <div class="content-inner">
+                              <ul>
+                                  <li><b>Basement Height :</b> Upto 3 feet</li>
+                                  <li><b>Steel :</b> JSW / AISHWARYAM </li>
+                                  <li><b>Chamber Bricks :</b> For Partition walls. 9-Inch Thick Exterior Walls | 4 Inch Thick Inner Walls</li>
+                                  <li><b>Cement :</b> Ramco / Dalmia</li>
+                                  <li><b>M Sand :</b> Blockwork & All Masonry Works</li>
+                                  <li><b>P Sand :</b> Plastering Works</li>
+                                  <li><b>Concrete Grade :</b> M20 | RMC for Roof</li>
+                                  <li><b>Ceiling Height :</b> 10.5 Feet</li>
+                                  <li><b>Steel Reinforcement :</b> As per Standard</li>
+                                  <li><b>Parapet Wall :</b>3'6 Feet Height | 9" Thick </li>
+                              </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="accordion-item" data-section="bathroom">
+                        <div class="accordion-header" onclick="toggleSection('bathroom')">
+                            <h3>Bathroom & Plumbing</h3>
+                            <span class="plus-icon"></span>
+                        </div>
+                          <div class="accordion-content">
+                            <div class="content-inner">
+                              <ul>
+                                  <li><b>Wall Tiles :</b> Upto Ceiling (Full Height). Size 2'X2' Vitrified Tile. Upto ₹50/Sqft. 1 Colour for 2 Bathrooms</li>
+                                  <li><b>Bath & CP Fittings :</b> Jaquar | Upto ₹17000 Per Bathroom | Floor Mounted EWC, Wall Mounted Wash Basin, Pillar Tap, Health Faucet, Shower Set, 2-in-1 Wall Mixer.</li>
+                                  <li><b>Plumbing Pipes & Fittings :</b> Inner CPVC, Outer PVC. Brands: Finolex</li>
+                                  <li><b>Overhead Tank :</b> 1000 litres Sintex | 3 Layered | UV Protected | White Colour</li>
+                              </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="accordion-item" data-section="flooring">
+                        <div class="accordion-header" onclick="toggleSection('flooring')">
+                            <h3>Flooring</h3>
+                            <span class="plus-icon"></span>
+                        </div>
+                          <div class="accordion-content">
+                            <div class="content-inner">
+                              <ul>
+                                  <li><b>Living, Dining, Bedrooms & Kitchen :</b> 4'X2' | Vitrified Tiles Upto ₹65/Sqft. 1 Model for Living, Dining and Kitchen. KAG / Sunheart or Equivalent</li>
+                                  <li><b>Balcony & Utility :</b> Size 2'X2' | Upto 50/Sqft | Antiskid</li>
+                                  <li><b>Staircase :</b> Full Body Tile : Upto ₹110/sqft</li>
+                                  <li><b>Car Parking :</b> 1'X1' Heavy Duty Tile | Upto ₹50/Sqft</li>
+                                  <li><b>Terrace Flooring :</b> Weathering course with traditional red tiles</li>
+                              </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="accordion-item" data-section="kitchen">
+                        <div class="accordion-header" onclick="toggleSection('kitchen')">
+                            <h3>Kitchen & Dining</h3>
+                            <span class="plus-icon"></span>
+                        </div>
+                          <div class="accordion-content">
+                            <div class="content-inner">
+                              <ul>
+                                  <li><b>Wall Tile :</b> Vitrified Tile (2'X2') | Upto ₹55/Sqft</li>
+                                  <li><b>Sink Faucet :</b> Upto ₹2000 / No</li>
+                                  <li><b>Kitchen Sink :</b> Stainless Steel sink with Drain Upto ₹4000</li>
+                                  <li><b>Dining :</b> Wall Mounted Wash Basin</li>
+                                  <li><b>Kitchen Granite Top :</b> Upto ₹140/Sqft</li>
+                              </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="accordion-item" data-section="door">
+                        <div class="accordion-header" onclick="toggleSection('door')">
+                            <h3>Door, Windows & Railing</h3>
+                            <span class="plus-icon"></span>
+                        </div>
+                          <div class="accordion-content">
+                            <div class="content-inner">
+                              <ul>
+                                  <ul>
+                                      <li><b>Main Door :</b> Vengai or Ghana Teak Door & Teak Frame | 35mm Thickness | 5"X3" Thick Frame | 8' Height 4 Feet Width.</li>
+                                      <li><b>Room Doors :</b> Flush Door| Sal Wood Frame | 7'X3'</li>
+                                      <li><b>Bathroom Door :</b> WPC Door & Frame | 7'X2.5'</li>
+                                      <li><b>Windows :</b> UPVC Sliding White - No Restriction on Size and Quantity | 5mm Clear Glass</li>
+                                      <li><b>Staircase Railing :</b> SS 304 Grade Railing</li>
+                                      <li><b>Balcony Railing :</b> SS 304 Grade Railing with 8mm Toughened Glass with Posts</li>
+                                  </ul>
+                                  </div>
+                          </div>
+                      </div>
+
+                      <div class="accordion-item" data-section="painting">
+                        <div class="accordion-header" onclick="toggleSection('painting')">
+                            <h3>Painting</h3>
+                            <span class="plus-icon"></span>
+                        </div>
+                          <div class="accordion-content">
+                            <div class="content-inner">
+                              <ul>
+                                  <li><b>Inner Wall Putty :</b> 2 coats of Wall Putty | Nippon</li>
+                                  <li><b>Wall Painting :</b> 1 coat of Primer | 2 coats of Satin glo plus emulsion | Nippon</li>
+                                  <li><b>Ceiling Painting :</b> 1 coat of Primer | 2 coats of Satin glo plus emulsion | Nippon</li>
+                                  <li><b>Exterior Paint :</b> 1 coat of Primer | 2 Coats of Weather bond | Nippon</li>
+                                  <li><b>Elevation Putty :</b> 2 Coat of Putty for Front Elevation | Nippon Exterior Putty</li>
+                              </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="accordion-item" data-section="electrical">
+                        <div class="accordion-header" onclick="toggleSection('electrical')">
+                            <h3>Electrical</h3>
+                            <span class="plus-icon"></span>
+                        </div>
+                          <div class="accordion-content">
+                            <div class="content-inner">
+                              <ul>
+                                  <li>Wires - Kundan </li>
+                                  <li>Switches - Legrand</li>
+                                  <li>No Restriction on Number of Points. Except for Lifts, DG, Curtain Motors, Swimming Pool, Ro Plant, Pressure Pump, Intercom, Surveillance System, Exterior Light Points, Gate Automation, lightening arrester, Hybrid Solar Heater, Water Fountain, HVAC Systems.</li>
+                                  
+                              </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="accordion-item" data-section="removed">
+                        <div class="accordion-header" onclick="toggleSection('removed')">
+                            <h3>What's not included</h3>
+                            <span class="plus-icon"></span>
+                        </div>
+                          <div class="accordion-content">
+                            <div class="content-inner">
+                              <ul>
+                                  <li>Compound Wall @ 425/Sqtft & Gate (7 feet hight incluning foundation)</li>
+                                  <li>Sump & Septic Tank @ 28/Litre</li>
+                                  <li>Lift, Lift Pit and Shaft</li>
+                                  <li>Electricity Connection</li>
+                                  <li>Building Plan Approval, Water</li>
+                                  <li>Elevation Special Materials</li>
+                              </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Add other sections similarly -->
+                  </div>
+              </div>
+                    <!-- Add Premium and Ultra Luxury packages similarly -->
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+
+
+          <!-- process start  -->
+          <section id="calc-section" class="sec-spacing">
+          <div>
+            <h1 class="design">
+              <span class="sec-span">-</span> Our Process
+              <span class="sec-span">-</span>
+            </h1>
+            <p class="subtitle">
+              Our Home Construction Steps are Simple and Easy to Understand
+            </p>
+
+            <div class="timeline-container">
+              <div class="timeline-step">
+                <div class="circle">1</div>
+                <div class="step-content">
+                  Fill out the enquiry form, and our team will reach you to
+                  understand your needs.
+                </div>
+              </div>
+              <div class="timeline-step">
+                <div class="circle">2</div>
+                <div class="step-content">
+                  Our project team will visit your site for analysis.
+                </div>
+              </div>
+              <div class="timeline-step">
+                <div class="circle">3</div>
+                <div class="step-content">
+                  We will initiate the design phase and begin the approval
+                  process.
+                </div>
+              </div>
+              <div class="timeline-step">
+                <div class="circle">4</div>
+                <div class="step-content">
+                  A detailed quotation, including specifications and payment
+                  terms, will be provided to you.
+                </div>
+              </div>
+              <div class="timeline-step">
+                <div class="circle">5</div>
+                <div class="step-content">
+                  Once you pay the booking amount and sign the construction
+                  agreement, we will commence the work.
+                </div>
+              </div>
+              <div class="timeline-step">
+                <div class="circle">6</div>
+                <div class="step-content">
+                  Sit back and relax while we build your dream home, and track
+                  the progress of your project via our app.
+                </div>
+              </div>
+            </div>
+            <div class="summary-text">
+              <p>
+                Are you searching for a reliable house construction company in
+                Tuticorin? You've come to the right spot. While there are
+                several construction companies in Tuticorin, we stand out as one
+                of the best. Take advantage of our free construction cost
+                calculator tool above, which provides an approximate estimate of
+                construction costs in Tuticorin. Simply select your desired
+                package, input the construction area and a few other essential
+                details, and receive your cost estimate instantly.
+              </p>
+            </div>
+          </div> 
+          </section>
+          <!-- process end  -->
+
+          <!-- footer -->
+          <footer class="mil-dark-bg">
+            <div class="mi-invert-fix">
+              <div class="container mil-p-120-60">
+                <div class="row justify-content-between">
+                  <div class="col-md-4 col-lg-4 mil-mb-60">
+                    <div class="mil-muted mil-logo mil-up mil-mb-30">
+                      P7-Builders
+                    </div>
+
+                    <p class="mil-light-soft mil-up mil-mb-30">
+                      Reach us for your houseGoals:
+                    </p>
+
+                    <form
+                      class="mil-subscribe-form mil-up"
+                      onclick="chatWithUs()"
+                    >
+                      <input type="text" placeholder="Chat With Us" disabled />
+                      <button
+                        type="submit"
+                        class="mil-button mil-icon-button-sm mil-arrow-place"
+                      ></button>
+                    </form>
+                  </div>
+                  <div class="col-md-7 col-lg-6">
+                    <div class="row justify-content-end">
+                      <div class="col-md-6 col-lg-7">
+                        <nav class="mil-footer-menu mil-mb-60">
+                          <ul>
+                            <li class="mil-up mil-active">
+                              <a href="index.html">Home</a>
+                            </li>
+                            <li class="mil-up">
+                              <a href="portfolio-1.html">Portfolio</a>
+                            </li>
+                            <li class="mil-up">
+                              <a href="services.html">Services</a>
+                            </li>
+                            <li class="mil-up">
+                              <a href="contact.html#contact">Contact</a>
+                            </li>
+                            <li class="mil-up">
+                              <a href="blog-inner.html">Blog</a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                      <div class="col-md-6 col-lg-5">
+                        <ul class="mil-menu-list mil-up mil-mb-60">
+                          <li>
+                            <a href="index.html#." class="mil-light-soft"
+                              >Privacy Policy</a
+                            >
+                          </li>
+                          <li>
+                            <a href="index.html#." class="mil-light-soft"
+                              >Terms and conditions</a
+                            >
+                          </li>
+                          <li>
+                            <a href="index.html#." class="mil-light-soft"
+                              >Cookie Policy</a
+                            >
+                          </li>
+                          <li>
+                            <a href="index.html#." class="mil-light-soft"
+                              >Careers</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-between flex-sm-row-reverse">
+                  <div class="col-md-7 col-lg-6">
+                    <div class="row justify-content-between">
+                      <div class="col-md-6 col-lg-5 mil-mb-60">
+                        <h6 class="mil-muted mil-up mil-mb-30">Address</h6>
+
+                        <p class="mil-light-soft mil-up">
+                          4a/135 SMT Housing Board,State Bank Colony, Tuticorin,
+                          <span class="mil-no-wrap"></span>
+                        </p>
+                        <p class="mil-light-soft mil-up">
+                          Tamilnadu – 628002,
+                          <span class="mil-no-wrap"></span>
+                        </p>
+                        <p class="mil-light-soft mil-up">
+                          India.
+                          <span class="mil-no-wrap"></span>
+                        </p>
+                      </div>
+                      <div class="col-md-6 col-lg-5 mil-mb-60" style="width: fit-content;">
+                        <h6 class="mil-muted mil-up mil-mb-30">Reach Us</h6>
+
+                        <p class="mil-light-soft mil-up phone-link"> 
+                            Ph:
+                            <a onclick="makeCall()"> +91 9384 404 707</a>
+                          </p>
+                          <p class="mil-light-soft mil-up cmpnyMail" onclick="gMail()">Mail: p7builder@gmail.com</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-lg-6 mil-mb-60">
+                    <div class="mil-vert-between">
+                      <div class="mil-mb-30">
+                        <ul class="mil-social-icons mil-up">
+                          <li>
+                            <a
+                              onclick="instagramLink()"
+                              rel="noopener noreferrer"
+                              class="social-icon"
+                            >
+                              <i class="fab fa-instagram"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              onclick="fbLink()"
+                              rel="noopener noreferrer"
+                              class="social-icon"
+                            >
+                              <i class="fab fa-facebook"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              onclick="ytLink()"
+                              rel="noopener noreferrer"
+                              class="social-icon"
+                            >
+                              <i class="fab fa-youtube"></i
+                            ></a>
+                          </li>
+                          <!-- <li>
+                                  <a
+                                    href="index.html#."
+                                    target="_blank"
+                                    class="social-icon"
+                                  >
+                                    <i class="fab fa-youtube"></i
+                                  ></a>
+                                </li> -->
+                        </ul>
+                      </div>
+                      <p class="mil-light-soft mil-up">
+                        P7 Builders © Copyright 2024. Powered by
+                        <a class="cmpnyWebsite" onclick="companyWebsite()"
+                          >Digisailor</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- footer end -->
+
+          <!-- hidden elements -->
+          <div class="mil-hidden-elements">
+            <div class="mil-dodecahedron">
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="mil-pentagon">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="mil-arrow"
+            >
+              <path
+                d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z"
+              />
+            </svg>
+
+            <svg
+              width="250"
+              viewBox="0 0 300 1404"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="mil-lines"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1 892L1 941H299V892C299 809.71 232.29 743 150 743C67.7096 743 1 809.71 1 892ZM0 942H300V892C300 809.157 232.843 742 150 742C67.1573 742 0 809.157 0 892L0 942Z"
+                class="mil-move"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M299 146V97L1 97V146C1 228.29 67.7096 295 150 295C232.29 295 299 228.29 299 146ZM300 96L0 96V146C0 228.843 67.1573 296 150 296C232.843 296 300 228.843 300 146V96Z"
+                class="mil-move"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M299 1H1V1403H299V1ZM0 0V1404H300V0H0Z"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M150 -4.37115e-08L150 1404L149 1404L149 0L150 -4.37115e-08Z"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M150 1324C232.29 1324 299 1257.29 299 1175C299 1092.71 232.29 1026 150 1026C67.7096 1026 1 1092.71 1 1175C1 1257.29 67.7096 1324 150 1324ZM150 1325C232.843 1325 300 1257.84 300 1175C300 1092.16 232.843 1025 150 1025C67.1573 1025 0 1092.16 0 1175C0 1257.84 67.1573 1325 150 1325Z"
+                class="mil-move"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M300 1175H0V1174H300V1175Z"
+                class="mil-move"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M150 678C232.29 678 299 611.29 299 529C299 446.71 232.29 380 150 380C67.7096 380 1 446.71 1 529C1 611.29 67.7096 678 150 678ZM150 679C232.843 679 300 611.843 300 529C300 446.157 232.843 379 150 379C67.1573 379 0 446.157 0 529C0 611.843 67.1573 679 150 679Z"
+                class="mil-move"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M299 380H1V678H299V380ZM0 379V679H300V379H0Z"
+                class="mil-move"
+              />
+            </svg>
+          </div>
+          <!-- hidden elements end -->
+        </div>
+      </div>
+      <!-- content -->
+    </div>
+    <!-- wrapper end -->
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- fancybox js -->
+    <script src="js/plugins/fancybox.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <!-- scroll to js -->
+    <script src="js/plugins/ScrollTo.min.js"></script>
+    <!-- index js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+

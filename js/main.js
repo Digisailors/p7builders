@@ -1244,3 +1244,138 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 },1000);
 });
+
+
+// package script
+// const headers = document.querySelectorAll('.accordion-header');
+
+// headers.forEach(header => {
+//     header.addEventListener('click', () => {
+//         const sectionName = header.textContent.trim().split(' ')[0];
+//         const isExpanded = header.querySelector('span').textContent === '-';
+        
+//         document.querySelectorAll('.accordion-item').forEach(item => {
+//             if (item.querySelector('.accordion-header').textContent.includes(sectionName)) {
+//                 const content = item.querySelector('.accordion-content');
+//                 const span = item.querySelector('.accordion-header span');
+                
+//                 if (isExpanded) {
+//                     content.classList.remove('show'); // Collapse the section
+//                     span.textContent = '+';
+//                 } else {
+//                     content.classList.add('show'); // Expand the section
+//                     span.textContent = '-';
+//                 }
+//             }
+//         });
+//     });
+// });
+
+// package script end
+// function toggleSection(sectionName) {
+//     const items = document.querySelectorAll(`[data-section="${sectionName}"]`);
+//     const isActive = items[0].querySelector('.accordion-content').classList.contains('active');
+    
+//     // First, get the maximum height of all content
+//     let maxHeight = 0;
+//     if (!isActive) {
+//         items.forEach(item => {
+//             const content = item.querySelector('.content-inner');
+//             const height = content.offsetHeight;
+//             maxHeight = Math.max(maxHeight, height);
+//         });
+//     }
+
+//     // Then apply the same height to all sections
+//     items.forEach(item => {
+//         const content = item.querySelector('.accordion-content');
+//         const icon = item.querySelector('.plus-icon');
+        
+//         if (isActive) {
+//             content.style.height = '0';
+//             content.classList.remove('active');
+//             icon.classList.remove('active');
+//         } else {
+//             content.style.height = maxHeight + 'px';
+//             content.classList.add('active');
+//             icon.classList.add('active');
+//         }
+//     });
+// }
+
+// // Initialize heights on page load
+// document.addEventListener('DOMContentLoaded', () => {
+//     const sections = ['design']; // Add other section names as needed
+//     sections.forEach(section => {
+//         const items = document.querySelectorAll(`[data-section="${section}"]`);
+//         let maxHeight = 0;
+        
+//         items.forEach(item => {
+//             const content = item.querySelector('.content-inner');
+//             const height = content.offsetHeight;
+//             maxHeight = Math.max(maxHeight, height);
+//         });
+
+//         items.forEach(item => {
+//             const content = item.querySelector('.accordion-content');
+//             content.style.height = '0';
+//         });
+//     });
+// });
+
+let currentOpenSection = null;
+
+function toggleSection(sectionName) {
+    // If there's already an open section and it's different from the clicked one, close it
+    if (currentOpenSection && currentOpenSection !== sectionName) {
+        const previousItems = document.querySelectorAll(`[data-section="${currentOpenSection}"]`);
+        previousItems.forEach(item => {
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.plus-icon');
+            content.style.height = '0';
+            content.classList.remove('active');
+            icon.classList.remove('active');
+        });
+    }
+
+    const items = document.querySelectorAll(`[data-section="${sectionName}"]`);
+    const firstContent = items[0].querySelector('.accordion-content');
+    const isActive = firstContent.classList.contains('active');
+
+    if (isActive) {
+        // Closing current section
+        items.forEach(item => {
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.plus-icon');
+            content.style.height = '0';
+            content.classList.remove('active');
+            icon.classList.remove('active');
+        });
+        currentOpenSection = null;
+    } else {
+        // Opening new section
+        let maxHeight = 0;
+        items.forEach(item => {
+            const contentInner = item.querySelector('.content-inner');
+            maxHeight = Math.max(maxHeight, contentInner.offsetHeight);
+        });
+
+        items.forEach(item => {
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.plus-icon');
+            content.style.height = maxHeight + 'px';
+            content.classList.add('active');
+            icon.classList.add('active');
+        });
+        currentOpenSection = sectionName;
+    }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Initially close all sections
+    const allContents = document.querySelectorAll('.accordion-content');
+    allContents.forEach(content => {
+        content.style.height = '0';
+    });
+});
