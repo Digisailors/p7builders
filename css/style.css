@@ -678,7 +678,7 @@ textarea {
   padding: 0 30px;
   width: 100%;
   font-size: 12px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 2px;
   font-weight: 500;
   font-family: "Outfit", sans-serif;
@@ -3388,6 +3388,9 @@ portfolio
 map
 
 ***************************/
+.map-section{
+  background-color: black;
+}
 .mil-map-frame {
   background-color: rgb(240, 240, 240);
   pointer-events: all;
@@ -4606,7 +4609,7 @@ p.subtitle {
 .circle {
   width: 50px;
   height: 50px;
-  background-color: #fff;
+  background-color: #f1ebeb;
   color: #333;
   font-size: 18px;
   font-weight: bold;
@@ -4764,6 +4767,185 @@ p.subtitle {
 
 
 /* package styling */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+      .package-bg{
+        background-color: #020202;
+      }
+      .package-container {
+          max-width: 98%;
+          margin: 0 auto;
+          margin-bottom: 20px;
+          padding: 20px;
+      }
 
+      .package-title {
+          text-align: center;
+          margin-top: 30px;
+          margin-bottom: 50px;
+          /* font-family: 'Oswald', sans-serif; */
+          text-transform: uppercase;
+      }
+
+      .package-title h1 {
+        color: white;
+          font-size: 1.8rem;
+          /* font-weight: 300; */
+      }
+
+      .packages-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          
+      }
+
+      @media (max-width: 1200px) {
+          .packages-grid {
+              grid-template-columns: repeat(2, 1fr);
+          }
+      }
+
+      @media (max-width: 768px) {
+          .packages-grid {
+              grid-template-columns: 1fr;
+          }
+      }
+
+      .package-card {
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          background-color: white;
+          overflow: hidden;
+      }
+
+      .package-header {
+          background-color: #f1da7e;
+          margin: 5px ;
+          border-radius: 10px;
+          padding: 10px;
+          text-align: center;
+      }
+
+      .package-header h2 {
+          margin: 0;
+          color: #333;
+          font-size: 24px;
+          font-weight: 500;
+          text-transform: uppercase;
+      }
+
+      .package-price {
+          font-size: 32px;
+          font-weight: 600;
+          margin: 10px 0;
+      }
+
+      .package-price small {
+          font-size: 16px;
+          font-weight: 400;
+      }
+
+      .accordion-item {
+          border-bottom: 1px solid #eee;
+          
+      }
+
+      .accordion-header {
+          padding: 15px;
+          background-color: #ffffff;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      .accordion-header h3 {
+          margin: 0;
+          font-size: 14px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+      }
+
+      .plus-icon {
+          width: 20px;
+          height: 20px;
+          position: relative;
+          cursor: pointer;
+      }
+
+      .plus-icon::before,
+      .plus-icon::after {
+          content: '';
+          position: absolute;
+          background-color: #333;
+          transition: transform 0.3s ease;
+      }
+
+      .plus-icon::before {
+          width: 2px;
+          height: 20px;
+          left: 9px;
+          top: 0;
+      }
+
+      .plus-icon::after {
+          width: 20px;
+          height: 2px;
+          left: 0;
+          top: 9px;
+      }
+
+      .plus-icon.active::before {
+          transform: rotate(90deg);
+      }
+
+      .accordion-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-out;
+          background: white;
+      }
+
+      .accordion-content.active {
+        background-color: #ffffde;
+        margin: 5px;
+        border: 1px solid #e0e0b3;
+          max-height: none;
+      }
+
+      .content-inner {
+        text-align: justify;
+          padding: 15px;
+      }
+
+      .accordion-content ul {
+          list-style: none;
+          margin: 0;
+      }
+
+      .accordion-content li {
+          margin-bottom: 10px;
+          line-height: 1.4;
+          font-size: 14px;
+          font-weight: 400;
+      }
+
+      .accordion-content li b {
+          font-weight: 500;
+      }
+
+      .accordion-content li:last-child {
+          margin-bottom: 0;
+      }
+
+      /* This ensures all active content sections have the same height */
+      .section-group {
+          display: none;
+      }
+
+      .section-group.active {
+          display: block;
+      }
 
 /* package styling end  */
