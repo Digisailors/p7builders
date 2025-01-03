@@ -1083,6 +1083,14 @@ function scrollToBottom() {
   function calculatorRedirect(){
     window.location.href = "calculator.html";
   }
+
+//   package redirect
+function packageRedirect(){
+    window.location.href = "package.html";
+  }
+// package redirect end
+
+
 //   function redirectAfterSubmit() {
 //     // Redirect to the desired URL
 //     window.location.href = "https://suman-seelan.github.io/P7-UI/contact.html";
@@ -1243,4 +1251,63 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("One or more form elements are missing from the DOM.");
     }
 },1000);
+});
+
+
+// package section js
+let currentOpenSection = null;
+
+function toggleSection(sectionName) {
+    // If there's already an open section and it's different from the clicked one, close it
+    if (currentOpenSection && currentOpenSection !== sectionName) {
+        const previousItems = document.querySelectorAll(`[data-section="${currentOpenSection}"]`);
+        previousItems.forEach(item => {
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.plus-icon');
+            content.style.height = '0';
+            content.classList.remove('active');
+            icon.classList.remove('active');
+        });
+    }
+
+    const items = document.querySelectorAll(`[data-section="${sectionName}"]`);
+    const firstContent = items[0].querySelector('.accordion-content');
+    const isActive = firstContent.classList.contains('active');
+
+    if (isActive) {
+        // Closing current section
+        items.forEach(item => {
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.plus-icon');
+            content.style.height = '0';
+            content.classList.remove('active');
+            icon.classList.remove('active');
+        });
+        currentOpenSection = null;
+    } else {
+        // Opening new section
+        let maxHeight = 0;
+        items.forEach(item => {
+            const contentInner = item.querySelector('.content-inner');
+            maxHeight = Math.max(maxHeight, contentInner.offsetHeight);
+        });
+
+        items.forEach(item => {
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.plus-icon');
+            content.style.height = maxHeight + 'px';
+            content.classList.add('active');
+            icon.classList.add('active');
+        });
+        currentOpenSection = sectionName;
+    }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Initially close all sections
+    const allContents = document.querySelectorAll('.accordion-content');
+    allContents.forEach(content => {
+        content.style.height = '0';
+    });
 });
