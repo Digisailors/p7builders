@@ -1311,3 +1311,8 @@ document.addEventListener('DOMContentLoaded', () => {
         content.style.height = '0';
     });
 });
+//open map in address
+function openMap() {
+    const url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7885.335630221906!2d78.13330973695264!3d8.81724426494339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b03ef8cb76e7f0f%3A0x12d9f38c1ba610a7!2sState%20Bank%20Colony%2C%20Thoothukudi%2C%20Tamil%20Nadu%20628002!5e0!3m2!1sen!2sin!4v1735982209893!5m2!1sen!2sin";
+    window.open(url, "_blank");
+}

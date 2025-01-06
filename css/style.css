@@ -398,7 +398,7 @@ a {
 }
 
 .mil-light-soft {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4); 
 }
 
 .mil-dark-soft {
@@ -861,6 +861,12 @@ spaces
 }
 
 .mil-mb-30 {
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.mil-mb-31 {
+  font-size: small;
   text-align: justify;
   margin-bottom: 30px;
 }
@@ -1596,7 +1602,7 @@ menu
   -webkit-filter: brightness(110%);
           filter: brightness(110%);
 }
-.mil-main-menu ul li.mil-has-children > a:hover {
+/* .mil-main-menu ul li.mil-has-children > a:hover {
   color: rgb(255, 255, 255);
   padding-left: 25px;
 }
@@ -1625,6 +1631,7 @@ menu
   font-weight: 500;
   text-transform: uppercase;
 }
+
 .mil-main-menu ul li.mil-has-children ul li a:before {
   display: none;
 }
@@ -1674,7 +1681,105 @@ menu
   .mil-main-menu ul li.mil-has-children ul li:first-child {
     margin-top: 30px;
   }
+} */
+
+/* Adjust color and padding for the parent link when hovered */
+.mil-main-menu ul li.mil-has-children > a:hover {
+  color: rgb(255, 255, 255);
+  padding-left: 25px;
 }
+
+/* When hovering over the parent link, expand the submenu */
+.mil-main-menu ul li.mil-has-children:hover > ul {
+  max-height: 200px; /* Adjust the height when hovered */
+  padding-left: 25px; /* Adjust padding when hovered */
+}
+
+/* Transition effect for submenu */
+.mil-main-menu ul li.mil-has-children ul {
+  padding-left: 25px;
+  overflow: hidden;
+  max-height: 0; /* Start with hidden state */
+  -webkit-transition: 0.6s cubic-bezier(0, 0, 0.3642, 1);
+  transition: 0.6s cubic-bezier(0, 0, 0.3642, 1);
+}
+
+/* Style the submenu items */
+.mil-main-menu ul li.mil-has-children ul li {
+  margin-bottom: 5px;
+}
+
+.mil-main-menu ul li.mil-has-children ul li:first-child {
+  margin-top: 40px;
+}
+
+.mil-main-menu ul li.mil-has-children ul li a {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.mil-main-menu ul li.mil-has-children ul li a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-transform: translateX(5px);
+  transform: translateX(5px);
+}
+
+/* When submenu is active, show it */
+.mil-main-menu ul li.mil-has-children ul.mil-active {
+  max-height: 200px;
+}
+
+@media screen and (max-width: 1200px) {
+  .mil-main-menu {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .mil-main-menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .mil-main-menu ul li {
+    margin-bottom: 30px;
+  }
+
+  .mil-main-menu ul li a {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .mil-main-menu ul li a:before {
+    display: none;
+  }
+
+  .mil-main-menu ul li a.mil-active {
+    padding-left: 0 !important;
+  }
+
+  .mil-main-menu ul li.mil-has-children ul {
+    padding-left: 0;
+  }
+
+  .mil-main-menu ul li.mil-has-children ul li:first-child {
+    margin-top: 30px;
+  }
+}
+
 
 /* -------------------------------------------
 
