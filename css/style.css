@@ -4523,8 +4523,13 @@ html.is-animating .mil-menu-frame {
 }
 
 .summary p {
+  color: black;
   margin: 10px 0; 
   line-height: 2.0;
+}
+
+.summary h2{
+  color: rgb(255, 152, 0);
 }
 
 /* Media Query for Small Screens */
@@ -4544,6 +4549,7 @@ html.is-animating .mil-menu-frame {
 
 .calc-h2 {
   margin-top: 0;
+  color: rgb(255, 152, 0);
 }
 
 .calc-form-group {
@@ -4551,6 +4557,7 @@ html.is-animating .mil-menu-frame {
 }
 
 .calc-form-group label {
+  color: black;
   display: block;
   margin-bottom: 5px;
 }
@@ -4595,7 +4602,7 @@ html.is-animating .mil-menu-frame {
 }
 
 .calculator-button {
-  background: linear-gradient(135deg, #ff7300, #fae100);
+  background: linear-gradient(135deg, rgb(255,152,0), rgb(255,152,0));
   margin: auto;
   color: #ffffff;
   font-size: 18px;
@@ -4610,7 +4617,7 @@ html.is-animating .mil-menu-frame {
 
 .calculator-button:hover {
   animation: pulse 1s infinite;
-  background: linear-gradient(135deg, #9d61ff, #6c63ff);
+  background: linear-gradient(135deg, #ff7300, #fae100);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
   transform: translateY(-3px);
 }
@@ -4656,7 +4663,7 @@ html.is-animating .mil-menu-frame {
 }
 
 .sec-span {
-  color: #f9c940;
+  color: rgb(255, 152, 0);
   font-size: 2.5rem;
 }
 
@@ -4726,7 +4733,7 @@ p.subtitle {
 }
 
 .circle.active {
-  background-color: #f9c940;
+  background-color: rgb(255, 152, 0);;
   color: white;
 }
 
@@ -4924,7 +4931,8 @@ p.subtitle {
       }
 
       .package-header {
-          background-color: #f1da7e;
+          /* background-color: #f1da7e; */
+          background-color: rgb(255, 152, 0);
           margin: 5px ;
           border-radius: 10px;
           padding: 10px;
@@ -5013,7 +5021,8 @@ p.subtitle {
       }
 
       .accordion-content.active {
-        background-color: #ffffde;
+        /* background-color: #ffffde; */
+        background-color:rgb(255, 225, 159);
         margin: 5px;
         border: 1px solid #e0e0b3;
           max-height: none;
