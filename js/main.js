@@ -1118,13 +1118,13 @@ function makeCall() {
   }
 // footer call end 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const whatsappIcon = document.querySelector(".floating-whatsapp");
-    if (whatsappIcon) {
-      whatsappIcon.style.display = "flex"; // Make it visible
-    //   console.log("WhatsApp icon reinitialized.");
-    }
-  });
+// document.addEventListener("DOMContentLoaded", () => {
+//     const whatsappIcon = document.querySelector(".floating-whatsapp");
+//     if (whatsappIcon) {
+//       whatsappIcon.style.display = "flex"; // Make it visible
+//     //   console.log("WhatsApp icon reinitialized.");
+//     }
+//   });
 
   //whatsapp end
 //dynamic process
