@@ -1212,7 +1212,7 @@ frame
 } */
 
 .mil-logo img{    
-  height: 130px;
+  height: 100px;
   width: auto;
   background-color: transparent;
   z-index: 100;
@@ -1224,7 +1224,7 @@ frame
 }
 
 .mil-frame {
-  padding-left: 10px;
+  padding-left: 20px;
   padding-right: 50px;
   position: fixed;
   z-index: -2;
