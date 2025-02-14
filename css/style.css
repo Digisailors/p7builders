@@ -5074,5 +5074,9 @@ p.subtitle {
 
 /* //rating */
 .img-rating{
+<<<<<<< HEAD
   width: 300px;
+=======
+  width: 200px;
+>>>>>>> 62e84f61b2a02ed9e539eed996258cbc51859228
 }
