@@ -5071,3 +5071,8 @@ p.subtitle {
       }
 
 /* package styling end  */
+
+/* //rating */
+.img-rating{
+  width: 200px;
+}
